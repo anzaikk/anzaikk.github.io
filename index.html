@@ -175,6 +175,8 @@
 
     
 
+  <a href="https://github.com/yourname" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
 
     <main id="main" class="main">
       <div class="main-inner">
@@ -221,7 +223,7 @@
                 
               
 
-              <time title="Created: 2019-08-19 16:17:10 / Modified: 18:51:16" itemprop="dateCreated datePublished" datetime="2019-08-19T16:17:10+08:00">2019-08-19</time>
+              <time title="Created: 2019-08-19 16:17:10 / Modified: 21:20:52" itemprop="dateCreated datePublished" datetime="2019-08-19T16:17:10+08:00">2019-08-19</time>
             </span>
           
             
@@ -240,23 +242,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
+          <ol>
+<li>首先利用xrandr命令列出当前所能检测到的所有的分辨率。在运行xrandr命令后可以看到connected前面表示的是当前得到显卡。
+          <!--noindex-->
           
-            <ol>
-<li>首先利用xrandr命令列出当前所能检测到的所有的分辨率。在运行xrandr命令后可以看到connected前面表示的是当前得到显卡。</li>
-<li><p>再利用cvt命令来获得配置显示模式的格式，具体的用法是：cvt X Y,其中X表示的是分辨率的宽度，Y表示的是分辨率的高度。例如配置1920*1080的分辨率，可以使用命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cvt 1920 1080</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>将cvt命令得到的格式用xrandr命令添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo xrandr --newmode #后面跟着的是执行第2步中显示的Modeline后面的一串英文，其中引号中的内容可以任意修改。</span><br><span class="line">sudo xrandr --addmode 显卡名称 引号的内容</span><br><span class="line">sudo xrandr --output 显卡名称 引号的内容</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>为了在每次开机的时候设定好分辨率，将上面2，3步的命令添加到/.profile中 </p>
-</li>
-</ol>
-
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/19/设置显示屏分辨率/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           
+          <!--/noindex-->
         
       
-    </div>
+    </li></ol></div>
 
     
     
@@ -397,7 +396,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-19 21:14:51" itemprop="dateModified" datetime="2019-08-19T21:14:51+08:00">2019-08-19</time>
+                <time title="Modified: 2019-08-19 21:20:56" itemprop="dateModified" datetime="2019-08-19T21:20:56+08:00">2019-08-19</time>
               </span>
             
           
@@ -413,18 +412,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
-            <p>描述一类重要的随机动态过程的模型，时间和状态都是离散的随机转移过程。</p>
+          <p>描述一类重要的随机动态过程的模型，时间和状态都是离散的随机转移过程。</p>
 <ul>
 <li>系统在每个时期所处的状态是随机的</li>
-<li>下时期状态只确定于本时期的状态和转移概率</li>
-</ul>
-<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p><strong>状态概率</strong>&ensp;<script type="math/tex">a_i(n) = P(X_n = i),i = 1,2,3..k, n = 0,1...</script><br><strong>转移概率</strong>&ensp;<script type="math/tex">P_{ij} = P(X_{n+1} = j|X_n = i), p_{ij}>=0,i = 1,2,3...k,n</script><br><strong>状态转移基本方程</strong>&ensp;<script type="math/tex">a_i(n+1) = \sum_{j = 1}^{k}a_j(n)p_{ji},i = 1,2...,k,n</script><br><strong>状态概率向量</strong>&ensp; <script type="math/tex">a(n) = (a_1(n),a_1(n),...a_k(n))</script><br><strong>转移概率矩阵</strong>&ensp; <script type="math/tex">P= {p_{ij}}_{k*k}</script></p>
-
+<li>下时期状态只确定于本时期的状态和转移概率
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/17/马氏链模型/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
-    </div>
+    </li></ul></div>
 
     
     
@@ -578,7 +581,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-13 18:57:19" itemprop="dateModified" datetime="2019-08-13T18:57:19+08:00">2019-08-13</time>
+                <time title="Modified: 2019-08-19 21:23:16" itemprop="dateModified" datetime="2019-08-19T21:23:16+08:00">2019-08-19</time>
               </span>
             
           
@@ -594,77 +597,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
+          <p>线性规划只能解决一组线性约束条件下,某一目标只能是一个目标的最大或最小值的问题。但是实际决策中,衡量方案优劣要考虑多个目标。所以需要目标规划模型，模型中的这些目标中,有主要的,也有次要的;有最大值的,也有最小值的;有定量的,也有定性的;有相互补充的。<br>
+          <!--noindex-->
           
-            <p>线性规划只能解决一组线性约束条件下,某一目标只能是一个目标的最大或最小值的问题。但是实际决策中,衡量方案优劣要考虑多个目标。所以需要目标规划模型，模型中的这些目标中,有主要的,也有次要的;有最大值的,也有最小值的;有定量的,也有定性的;有相互补充的。</p>
-<h3 id="1-目标函数的求解思路"><a href="#1-目标函数的求解思路" class="headerlink" title="1. 目标函数的求解思路"></a>1. 目标函数的求解思路</h3><ul>
-<li><strong>加权系数法</strong><br>为每一目标赋一个权系数,把多目标模型转化成单一目标的模型。但困难是要确定合理的权系数,以反映不同目标之间的重要程度。</li>
-<li><strong>优先等级法</strong><br>将各目标按其重要程度不同的优先等级,转化为单目标模型。</li>
-<li><strong>有效解法</strong><br>寻求能够照顾到各个目标,并使决策者感到满意的解。由决策者来确定选取哪一个解,即得到一个满意解。但有效解的数目太多而难以将其一一求出。</li>
-</ul>
-<h3 id="2-目标规划的数学模型"><a href="#2-目标规划的数学模型" class="headerlink" title="2. 目标规划的数学模型"></a>2. 目标规划的数学模型</h3><p>为了具体说明目标规划与线性规划在处理问题的方法上的区别,先通过例子来介绍目标规划的有关概念及数学模型。<br>某工厂生产 I,II 两种产品,已知有关数据见下表:</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th></th>
-<th>I</th>
-<th>II</th>
-<th>拥有量</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>原料</td>
-<td>2</td>
-<td>1</td>
-<td>11</td>
-</tr>
-<tr>
-<td>设备</td>
-<td>1</td>
-<td>2</td>
-<td>10</td>
-</tr>
-<tr>
-<td>利润</td>
-<td>8</td>
-<td>10</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>是求获利最大的生产方案<br>这道题的数学模型是，设生产 I,II 产品分别为<script type="math/tex">x_1,x_2</script>则：</p>
-<script type="math/tex; mode=display">（目标函数）max z = 8x_1 + 10x_2\\
-（约束条件）s.t.
-\begin{cases}
-2x_1 + x_2 < 11\\
-x_1 + 2x_2 < 10\\
-x_1,x_2 > 0
-\end{cases}</script><p>最优决策方案为: <script type="math/tex">x_{1}^*= 4 , x_{2}^* = 3 , z = 62</script>元。<br>但实际上工厂在作决策方案时,要考虑市场等一系列其它条件。如</p>
-<ol>
-<li>根据市场信息,产品 I 的销售量有下降的趋势,故考虑产品 I 的产量不大于产品 II。</li>
-<li>超过计划供应的原材料,需要高价采购,这就使成本增加。</li>
-<li>应尽可能充分利用设备,但不希望加班。</li>
-<li>应尽可能达到并超过计划利润指标 56 元。</li>
-</ol>
-<p>有了这一系列的条件之后，简单的线性规划不足以解决这样的问题，所以要用目标规划这种数学模型。<br><strong>下面引入与建立目标规划数学模型有关的概念。</strong></p>
-<ol>
-<li><strong>正，负偏差变量</strong><br>设 d 为决策变量的函数,正偏差变量<script type="math/tex">d^+ = max{d, d^0, 0}</script>表示决策值超过目标值的部分,负偏差变量<script type="math/tex">d^- =max{d, d^0, 0}</script>表示决策值未达到目标值的部分,这里<script type="math/tex">d^0</script>表示d的目标值。其中<script type="math/tex">d^+,d^-</script>是同类型的数，因决策值不可能既超过目标值同时又未达到目标值,即恒有<script type="math/tex">d^+ * d^- = 0</script>。</li>
-<li><strong>绝对(刚性)约束和目标约束</strong><br>绝对约束是指必须严格满足的等式约束和不等式约束;如线性规划问题的所有约束条件,不能满足这些约束条件的解称为非可行解,所以它们是硬约束。<br>目标约束是目标规划特有的,可把约束右端项看作要追求的目标值。在达到此目标值时允许发生正或负偏差,因此在这些约束中加入正、负偏差变量,它们是软约束。</li>
-<li><strong>优先因子(优先等级)与权系数</strong><br>一个规划问题常常有若干目标。但决策者在要求达到这些目标时,是有主次或轻重缓急的不同。凡要求第一位达到的目标赋于优先因子<script type="math/tex">P_1</script>，其他的以此类推，例如：<script type="math/tex">P_k</script>比<script type="math/tex">P_{k+1}</script>的优先级高。赋于它们不同的权系数<script type="math/tex">w_j</script>，区别具有相同优先因子的两个目标的区别。</li>
-<li><strong>目标规划的目标函数</strong><br>目标规划的目标函数(准则函数)是按各目标约束的正、负偏差变量和赋于相应的优先因子而构造的。主要有三种形式。</li>
-</ol>
-<ul>
-<li>要求恰好达到目标值,即正、负偏差变量都要尽可能地小,这时<script type="math/tex; mode=display">min z = f ( d^+ + d^− )</script></li>
-<li>要求不超过目标值,即允许达不到目标值,就是正偏差变量要尽可能地小,这时<script type="math/tex; mode=display">minz = f(d^+)</script></li>
-<li>要求超过目标值,即超过量不限,但必须是负偏差变量要尽可能地小,这时<script type="math/tex; mode=display">min z = f ( d^− )</script>对每一个具体目标规划问题,可根据决策者的要求和赋于各目标的优先因子来构造目标函数。</li>
-</ul>
-
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/12/目标规划/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
 
     
     
@@ -813,11 +758,19 @@ x_1,x_2 > 0
                 
               
 
-              <time title="Created: 2019-08-10 14:31:46 / Modified: 22:24:59" itemprop="dateCreated datePublished" datetime="2019-08-10T14:31:46+08:00">2019-08-10</time>
+              <time title="Created: 2019-08-10 14:31:46" itemprop="dateCreated datePublished" datetime="2019-08-10T14:31:46+08:00">2019-08-10</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-19 21:32:45" itemprop="dateModified" datetime="2019-08-19T21:32:45+08:00">2019-08-19</time>
+              </span>
             
           
 
@@ -832,20 +785,19 @@ x_1,x_2 > 0
     <div class="post-body" itemprop="articleBody">
 
       
+          <p>小行星轨道问题中，关于二次曲线理论的公式：<br>
+          <!--noindex-->
           
-            <p>小行星轨道问题中，关于二次曲线理论的公式：</p>
-<script type="math/tex; mode=display">
-椭圆的一般方程：a_1x^2 + 2a_2xy + a_3y^2 + 2a_4x + 2a_5y + 1 = 0\\
-椭圆的标准方程：\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1</script><p>椭圆经过旋转和平移变换后的公式是：</p>
-<script type="math/tex; mode=display">
-\lambda_1 X^2 + \lambda_2 Y^2 + |\frac{D}{C}| = 0\\
-C = \begin{bmatrix}a_1&a_2\\a_2&a_3\end{bmatrix}\quad
-D =\begin{bmatrix}a_1&a_2&a_3\\a_2&a_3&a_5\\a_4&a_5&1\end{bmatrix}</script><p>其中<script type="math/tex">\lambda_1，\lambda_2</script>是C矩阵的特征值<br>所以椭圆的长半轴的平方为：<script type="math/tex">a^2 = |\frac{|D|}{\lambda_1 |C|}|</script><br>椭圆的短半轴长的平方为：<script type="math/tex">b^2 = |\frac{|D|}{\lambda_2|C|}|</script><br>椭圆的半焦距的平方为：<script type="math/tex">c^2 = \sqrt{a^2 + b^2}</script><br>椭圆的离心率为：<script type="math/tex">e = \frac{c}{a}</script><br>椭圆的面积为：<script type="math/tex">S = pi ab</script><br><a href="https://wenku.baidu.com/view/d968a48a9ec3d5bbfd0a74bc.html" title="二次曲线理论" target="_blank" rel="noopener">本文参考</a></p>
-
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/10/二次曲线理论/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
 
     
     
@@ -911,7 +863,7 @@ D =\begin{bmatrix}a_1&a_2&a_3\\a_2&a_3&a_5\\a_4&a_5&1\end{bmatrix}</script><p>�
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-19 20:25:18" itemprop="dateModified" datetime="2019-08-19T20:25:18+08:00">2019-08-19</time>
+                <time title="Modified: 2019-08-19 21:30:07" itemprop="dateModified" datetime="2019-08-19T21:30:07+08:00">2019-08-19</time>
               </span>
             
           
@@ -927,11 +879,7 @@ D =\begin{bmatrix}a_1&a_2&a_3\\a_2&a_3&a_5\\a_4&a_5&1\end{bmatrix}</script><p>�
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="一、matlab绘图"><a href="#一、matlab绘图" class="headerlink" title="一、matlab绘图"></a>一、matlab绘图</h2><p>强大的绘图功能是matlab的特点之一，matlab提供一系列的绘图函数，用户可以不用过多的考虑绘图的细节，<br>只需要一些简单的绘图参数就能够完成绘图。<br><strong>利用plot函数来绘制图形</strong><br>用plot函数来绘制图形主要有以下三步：</p>
-<ol>
-<li>通过指定要绘制函数的变量x的值的范围来定义x</li>
-<li>定义函数y = f(x)</li>
-<li>调用plot函数命令<br><strong>在图上添加标题，标签，网格线和缩放</strong>
+          <h2 id="一、matlab绘图"><a href="#一、matlab绘图" class="headerlink" title="一、matlab绘图"></a>一、matlab绘图</h2><p>强大的绘图功能是matlab的特点之一，matlab提供一系列的绘图函数，用户可以不用过多的考虑绘图的细节，<br>只需要一些简单的绘图参数就能够完成绘图。<br>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -943,7 +891,7 @@ D =\begin{bmatrix}a_1&a_2&a_3\\a_2&a_3&a_5\\a_4&a_5&1\end{bmatrix}</script><p>�
           <!--/noindex-->
         
       
-    </li></ol></div>
+    </p></div>
 
     
     
@@ -1009,7 +957,7 @@ D =\begin{bmatrix}a_1&a_2&a_3\\a_2&a_3&a_5\\a_4&a_5&1\end{bmatrix}</script><p>�
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-08 10:52:36" itemprop="dateModified" datetime="2019-08-08T10:52:36+08:00">2019-08-08</time>
+                <time title="Modified: 2019-08-19 21:20:49" itemprop="dateModified" datetime="2019-08-19T21:20:49+08:00">2019-08-19</time>
               </span>
             
           
@@ -1025,49 +973,19 @@ D =\begin{bmatrix}a_1&a_2&a_3\\a_2&a_3&a_5\\a_4&a_5&1\end{bmatrix}</script><p>�
     <div class="post-body" itemprop="articleBody">
 
       
+          <p>线性规划问题是在一组线性约束条件限制下，求一线性目标函数的最大值或者最小值的问题。<br>
+          <!--noindex-->
           
-            <p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script><br>线性规划问题是在一组线性约束条件限制下，求一线性目标函数的最大值或者最小值的问题。</p>
-<ul>
-<li>例子：<br>某机床厂生产甲、乙两种机床,每台销售后的利润分别为 4000 元与 3000 元。生产甲机床需用 A、 B 机器加工,加工时间分别为每台 2 小时和 1 小时;生产乙机床需用 A 、 B 、 C 三种机器加工,加工时间为每台各一小时。若每天可用于加工的机器时数分别为 A 机器 10 小时、 B 机器 8 小时和 C 机器 7 小时,问该厂应生产甲、乙机床各几台,才能使总利润最大?<br>&ensp;这个问题的数学模型为：设该厂生产甲机床<script type="math/tex">x_1</script>,生产乙机床<script type="math/tex">x_2</script>,则<script type="math/tex">x_1,x_2</script>应该满足：<script type="math/tex; mode=display">(目标函数)max:z = 4x_1 + 3x_2\tag{1}\\s.t.(约束条件)
-\begin{cases}
-2x_1+x_2<10\\
-x_1+x_2<8\\
-x_2<7\\
-x_1,x_2>0
-\end{cases}</script>上面的式子中，<script type="math/tex">x_1,x_2</script>是决策变量，上面的式子1是目标函数，下面的公式组是约束条件，由于目标函数和约束条件都是线性函数。故为线性规划问题。</li>
-</ul>
-<ol>
-<li>线性规划matlab的标准形式<br>为了避免形式多样化带来的不便，matlab中规定线性规划的标准形式如下：<script type="math/tex; mode=display">
-(目标函数)minc^Tx\\
-s.t.(约束条件)
-\begin{cases}
-Ax <= b\\
-Aeqx = beq\\
-lb < x < ub
-\end{cases}</script>其中c,x为单位列向量。A，Aeq为适当维度的矩阵。b,beq为适当维度的列向量。<br>例子：<script type="math/tex; mode=display">
-(目标函数)maxc^Tx\\
-s.t.(约束条件)
-\begin{cases}
-Ax <=b\\
-Aeqx = beq\\
-lb < x < ub
-\end{cases}</script>该例子的matlab的标准形式为：<script type="math/tex; mode=display">
-(目标函数)min-c^Tx\\
-s.t.(约束条件)
-\begin{cases}
--Ax >= -b\\
-Aeqx = beq\\
-lb < x < ub
-\end{cases}</script></li>
-<li>线性规划问题的解<br>满足约束条件的解x叫做<strong>可行解</strong>，而使得目标函数达到最大值或者最小值的解叫做<strong>最优解</strong>。所有可行解的集合叫做<strong>可行域</strong>。</li>
-<li>线性规划问题的图形解法<br>在文章的开头的那一道例子中，应用图解法</li>
-</ol>
-<p>4.线性规划问题的matlab解法</p>
-
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/07/线性规划/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
 
     
     
@@ -1273,7 +1191,7 @@ lb < x < ub
 
 <script src="/js/next-boot.js?v=7.3.0"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config("");
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
 
 <script type="text/x-mathjax-config">
@@ -1285,7 +1203,7 @@ lb < x < ub
   });
 </script>
 
-<script type="text/javascript" src="custom_mathjax_source">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
@@ -1324,30 +1242,6 @@ lb < x < ub
 
 
 
-  
-
-  
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
   
 
   
