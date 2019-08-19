@@ -6,7 +6,7 @@
 
 <html class="theme-next muse use-motion" lang="">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="generator" content="Hexo 3.8.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
@@ -54,17 +54,17 @@
   };
 </script>
 
-  <meta name="description" content="变量历史who 显示所使用的所有命令whos 显示所有命令的主要信息，包括内存等。clear 删除存储器中的变量。长任务可以通过使用省略号(…)扩展到另一行。格式命令默认情况下，MATLAB显示的是短格式即是保存四位小数。但是，如果要更精确，则需要使用format命令。format long命令显示十进制后的16位数字。format bank命令将数字舍入到小数点后两位。format short">
+  <meta name="description" content="变量历史who 显示所使用的所有命令whos 显示所有命令的主要信息，包括内存等。clear 删除存储器中的变量。长任务可以通过使用省略号(…)扩展到另一行。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="matlab基本操作知识">
 <meta property="og:url" content="http://yoursite.com/2019/08/05/matlab基本操作知识/index.html">
 <meta property="og:site_name" content="anzaikk">
-<meta property="og:description" content="变量历史who 显示所使用的所有命令whos 显示所有命令的主要信息，包括内存等。clear 删除存储器中的变量。长任务可以通过使用省略号(…)扩展到另一行。格式命令默认情况下，MATLAB显示的是短格式即是保存四位小数。但是，如果要更精确，则需要使用format命令。format long命令显示十进制后的16位数字。format bank命令将数字舍入到小数点后两位。format short">
+<meta property="og:description" content="变量历史who 显示所使用的所有命令whos 显示所有命令的主要信息，包括内存等。clear 删除存储器中的变量。长任务可以通过使用省略号(…)扩展到另一行。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-10T13:42:42.069Z">
+<meta property="og:updated_time" content="2019-08-19T12:33:37.193Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="matlab基本操作知识">
-<meta name="twitter:description" content="变量历史who 显示所使用的所有命令whos 显示所有命令的主要信息，包括内存等。clear 删除存储器中的变量。长任务可以通过使用省略号(…)扩展到另一行。格式命令默认情况下，MATLAB显示的是短格式即是保存四位小数。但是，如果要更精确，则需要使用format命令。format long命令显示十进制后的16位数字。format bank命令将数字舍入到小数点后两位。format short">
+<meta name="twitter:description" content="变量历史who 显示所使用的所有命令whos 显示所有命令的主要信息，包括内存等。clear 删除存储器中的变量。长任务可以通过使用省略号(…)扩展到另一行。">
   <link rel="canonical" href="http://yoursite.com/2019/08/05/matlab基本操作知识/">
 
 
@@ -112,13 +112,13 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
-  <div class="container sidebar-position-left">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -236,7 +236,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-10 21:42:42" itemprop="dateModified" datetime="2019-08-10T21:42:42+08:00">2019-08-10</time>
+                <time title="Modified: 2019-08-19 20:33:37" itemprop="dateModified" datetime="2019-08-19T20:33:37+08:00">2019-08-19</time>
               </span>
             
           
@@ -252,7 +252,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><strong>变量历史</strong><br>who 显示所使用的所有命令<br>whos 显示所有命令的主要信息，包括内存等。<br>clear 删除存储器中的变量。<br>长任务可以通过使用省略号(…)扩展到另一行。<br><strong>格式命令</strong><br>默认情况下，MATLAB显示的是短格式即是保存四位小数。但是，如果要更精确，则需要使用format命令。<br>format long命令显示十进制后的16位数字。<br>format bank命令将数字舍入到小数点后两位。<br>format short e命令以指数形式显示四位小数加上指数。<br>format long e命令允许以指数形式显示十六位小数加上指数。<br>format rat命令给出计算结果最接近的合理表达式。<br><strong>创建向量</strong><br><strong>行向量</strong>使用的是方括号元素集合的形式创建，用空格或者逗号分隔元素。<br><strong>列向量</strong>使用的是方括号元素集合的形式创建，用分号分隔元素。<br><strong>创建矩阵</strong><br>矩阵中每一行元素用逗号分隔，列与列之间用分号分隔元素。例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">m = [1 2 3;4 5 6;7 8 9];</span><br></pre></td></tr></table></figure></p>
+        <p><strong>变量历史</strong><br>who 显示所使用的所有命令<br>whos 显示所有命令的主要信息，包括内存等。<br>clear 删除存储器中的变量。<br>长任务可以通过使用省略号(…)扩展到另一行。<br><a id="more"></a><br><strong>格式命令</strong><br>默认情况下，MATLAB显示的是短格式即是保存四位小数。但是，如果要更精确，则需要使用format命令。<br>format long命令显示十进制后的16位数字。<br>format bank命令将数字舍入到小数点后两位。<br>format short e命令以指数形式显示四位小数加上指数。<br>format long e命令允许以指数形式显示十六位小数加上指数。<br>format rat命令给出计算结果最接近的合理表达式。<br><strong>创建向量</strong><br><strong>行向量</strong>使用的是方括号元素集合的形式创建，用空格或者逗号分隔元素。<br><strong>列向量</strong>使用的是方括号元素集合的形式创建，用分号分隔元素。<br><strong>创建矩阵</strong><br>矩阵中每一行元素用逗号分隔，列与列之间用分号分隔元素。例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">m = [1 2 3;4 5 6;7 8 9];</span><br></pre></td></tr></table></figure></p>
 <p><strong>matlab命令</strong></p>
 <ul>
 <li>数组及向量的命令</li>
@@ -482,7 +482,24 @@
 
   
   <script src="/js/scrollspy.js?v=7.3.0"></script>
-<script src="/js/post-details.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 
 </body>

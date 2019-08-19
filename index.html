@@ -6,7 +6,7 @@
 
 <html class="theme-next muse use-motion" lang="">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="generator" content="Hexo 3.8.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
@@ -108,13 +108,13 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
-  <div class="container sidebar-position-left">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -205,7 +205,7 @@
         
           <h1 class="post-title" itemprop="name headline">
               
-              <a href="/2019/08/19/设置显示屏分辨率/" class="post-title-link" itemprop="url">ubantu下设置显示屏分辨率</a>
+              <a href="/2019/08/19/设置显示屏分辨率/" class="post-title-link" itemprop="url">ubuntu下设置显示屏分辨率</a>
             
           </h1>
         
@@ -221,7 +221,7 @@
                 
               
 
-              <time title="Created: 2019-08-19 16:17:10 / Modified: 16:52:26" itemprop="dateCreated datePublished" datetime="2019-08-19T16:17:10+08:00">2019-08-19</time>
+              <time title="Created: 2019-08-19 16:17:10 / Modified: 18:51:16" itemprop="dateCreated datePublished" datetime="2019-08-19T16:17:10+08:00">2019-08-19</time>
             </span>
           
             
@@ -247,7 +247,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cvt 1920 1080</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>将cvt命令得到的格式用xrandr命令添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo xrandr --newmode #后面跟着的是执行第2步中显示的Modeline后面的一串英文，其中引号中的内容可以任意修改。</span><br><span class="line">sudo xrandr --addmode 显卡名称 引号的内容</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo xrandr --newmode #后面跟着的是执行第2步中显示的Modeline后面的一串英文，其中引号中的内容可以任意修改。</span><br><span class="line">sudo xrandr --addmode 显卡名称 引号的内容</span><br><span class="line">sudo xrandr --output 显卡名称 引号的内容</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为了在每次开机的时候设定好分辨率，将上面2，3步的命令添加到/.profile中 </p>
+</li>
 </ol>
 
           
@@ -727,7 +730,7 @@ x_1,x_2 > 0
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-17 23:11:44" itemprop="dateModified" datetime="2019-08-17T23:11:44+08:00">2019-08-17</time>
+                <time title="Modified: 2019-08-19 20:23:01" itemprop="dateModified" datetime="2019-08-19T20:23:01+08:00">2019-08-19</time>
               </span>
             
           
@@ -743,16 +746,19 @@ x_1,x_2 > 0
     <div class="post-body" itemprop="articleBody">
 
       
+          <p>动态规划是求解某类问题的一种方法,是考察问题的一种途径,而不是一种特殊算法(如线性规划是一种算法)。它不像线性规划那样有一个标准的数学表达式和明确定义的一组规则,而必须对具体问题进行具体分析处<br>理。<br>
+          <!--noindex-->
           
-            <p>动态规划是求解某类问题的一种方法,是考察问题的一种途径,而不是一种特殊算法(如线性规划是一种算法)。它不像线性规划那样有一个标准的数学表达式和明确定义的一组规则,而必须对具体问题进行具体分析处理。</p>
-<h3 id="1-决策过程的分类"><a href="#1-决策过程的分类" class="headerlink" title="1. 决策过程的分类"></a>1. 决策过程的分类</h3><p>根据过程的时间变量是离散的还是连续的,分为离散时间决策过程和连续时间决策过程。<br>根据过程演变是确定的还是随机的,分为确定性决策过程和随机性决策过程。<br>其中应用最广的是确定性多阶段决策过程。</p>
-<h3 id="2-基本概念、基本方程和计算方法"><a href="#2-基本概念、基本方程和计算方法" class="headerlink" title="2. 基本概念、基本方程和计算方法"></a>2. 基本概念、基本方程和计算方法</h3><p>一个多阶段决策过程最优化问题的动态规划模型通常包含阶段，状态，决策，策略这几个要素。<br><strong>阶段</strong>表示的是对整个过程的自然划分。通常根据时间顺序或空间顺序特征来划分阶段,以便按阶段的次序解优化问题。阶段变量一般用 k = 1 , 2 , L , n 表示。<br><strong>状态</strong>表示的是每个阶段开始时过程所处的自然状况。描述状态的变量称状态变量。变量允许取值的范围称允许状态集合。用<script type="math/tex">x_k</script>表示第 k 阶段的状态变量,它可以是一个数或一个向量。用<script type="math/tex">X_k</script>表示第 k 阶段的允许状态集合。<br><strong>决策</strong>表示的是当一个阶段的状态确定后,可以作出各种选择从而演变到下一阶段的某个状态。描述决策的变量称决策变量，变量允许取值的范围称允许决策集合。在最优控制问题中也称为控制。用<script type="math/tex">u_k (x_k)</script>表示第 k 阶段处于状态<script type="math/tex">x_k</script>时的决策变量,用<script type="math/tex">U_k(x_k)</script>表示<script type="math/tex">x_k</script>的允许决策集合。<br><strong>策略</strong>表示的是决策组成的序列。由初始状态<script type="math/tex">x_1</script>开始的全过程的策略记作<script type="math/tex">p_{1n}(x1)</script>由第 k 阶段的状态<script type="math/tex">x_k</script>开始到终止状态的后部子过程的策略记作<script type="math/tex">p_{kn}(x_k)</script>。<br><strong>状态转移方程</strong>表示的是在确定性过程中,一旦某阶段的状态和决策为已知,下阶段的状态便完全确定。写作：</p>
-<script type="math/tex; mode=display">X_{k+1} = T_{k}(u_k, x_k) k = 1,2,3,...n</script><p><strong>指标函数</strong>表示的是衡量过程优劣的数量指标,它是定义在全过程和所有后部子过程上的数量函数,用 <script type="math/tex">V_{kn}( x_k , u_k , x_k + 1 , L , x_n + 1 )</script> 表示,<script type="math/tex">k = 1 , 2 , L , n</script>。</p>
-
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/10/动态规划/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
 
     
     
@@ -905,7 +911,7 @@ D =\begin{bmatrix}a_1&a_2&a_3\\a_2&a_3&a_5\\a_4&a_5&1\end{bmatrix}</script><p>�
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-13 16:30:07" itemprop="dateModified" datetime="2019-08-13T16:30:07+08:00">2019-08-13</time>
+                <time title="Modified: 2019-08-19 20:25:18" itemprop="dateModified" datetime="2019-08-19T20:25:18+08:00">2019-08-19</time>
               </span>
             
           
@@ -921,103 +927,23 @@ D =\begin{bmatrix}a_1&a_2&a_3\\a_2&a_3&a_5\\a_4&a_5&1\end{bmatrix}</script><p>�
     <div class="post-body" itemprop="articleBody">
 
       
-          
-            <h2 id="一、matlab绘图"><a href="#一、matlab绘图" class="headerlink" title="一、matlab绘图"></a>一、matlab绘图</h2><p>强大的绘图功能是matlab的特点之一，matlab提供一系列的绘图函数，用户可以不用过多的考虑绘图的细节，<br>只需要一些简单的绘图参数就能够完成绘图。<br><strong>利用plot函数来绘制图形</strong><br>用plot函数来绘制图形主要有以下三步：</p>
+          <h2 id="一、matlab绘图"><a href="#一、matlab绘图" class="headerlink" title="一、matlab绘图"></a>一、matlab绘图</h2><p>强大的绘图功能是matlab的特点之一，matlab提供一系列的绘图函数，用户可以不用过多的考虑绘图的细节，<br>只需要一些简单的绘图参数就能够完成绘图。<br><strong>利用plot函数来绘制图形</strong><br>用plot函数来绘制图形主要有以下三步：</p>
 <ol>
 <li>通过指定要绘制函数的变量x的值的范围来定义x</li>
 <li>定义函数y = f(x)</li>
-<li>调用plot函数命令<br><strong>在图上添加标题，标签，网格线和缩放</strong></li>
-</ol>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>描述说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>xlabel,ylabel</td>
-<td>沿着x轴和y轴生成标签</td>
-</tr>
-<tr>
-<td>title</td>
-<td>设置图的总标题</td>
-</tr>
-<tr>
-<td>grid on</td>
-<td>生成网格线</td>
-</tr>
-<tr>
-<td>axis equal</td>
-<td>允许生成具有相同比例因子的绘图和两个轴上的空格。</td>
-</tr>
-<tr>
-<td>axis square</td>
-<td>命令生成一个方形图</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>在同一个图上绘制多个函数</strong><br>通过在函数plot传入多个函数对应的参数实现，例如plot(x,y,x,g)。<br><strong>在图上设置颜色</strong><br>MATLAB提供了八个基本的颜色选项来绘制图形。 下表显示了颜色及其代码</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>代码</th>
-<th>描述说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>r</td>
-<td>红色</td>
-</tr>
-<tr>
-<td>y</td>
-<td>黄色</td>
-</tr>
-<tr>
-<td>g</td>
-<td>绿色</td>
-</tr>
-<tr>
-<td>b</td>
-<td>蓝色</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>设置刻度轴</strong><br>axis命令用来设置轴刻度。可以通过以下方式使用axis命令为x和y轴提供最小和最大值。<br><strong>绘制条形图</strong><br>bar命令绘制二维条形图，基本的参数和plot函数差不多<br><strong>绘制等高线</strong><br>两个函数的变量的轮廓线是曲线，matlab提供了contour函数来绘制图形。具体的步骤是</p>
-<ol>
-<li>通过meshgrid来生成两个独立的变量x,y。例：[x,y] = meshgrid(1:0.1:2,1:0.2:4)</li>
-<li>定义函数g = f(x,y)</li>
-<li>调用函数contour(x,y,g)</li>
-</ol>
-<p>其他的关于标签的内容和plot函数的用法一样，同时为了时代的图上有标识可以调用set函数<br><strong>三维图</strong><br>matlab中绘制三维图也是分为三步，前两步和绘制轮廓图的过程是一样的，第三步则是调用surf函数，这个函数的用法和contour的<br>用法是一样的的。同时也可以调用mesh函数进行绘制三维图</p>
-<h2 id="二、matlab代数-方程求解"><a href="#二、matlab代数-方程求解" class="headerlink" title="二、matlab代数(方程求解)"></a>二、matlab代数(方程求解)</h2><p><strong>在MATLAB中求解基本代数方程</strong><br>solve函数用于求解代数方程。在其最简单的形式中，solve函数将引用中的方程式作为参数。例子：solve(‘x - 21 = 0’)该方法适用于方程组，二次方程，高阶方程。若涉及多个变量，则要转入第二个参数。例子:solve(‘u - v + 2 = 0’, ‘v’)。</p>
-<p>第二种方法是调用roots函数，该函数传入的参数是方程的系数，该函数也是适用于方程组，二次方程，高阶方程等。例子：要求 2x -3y =0,即是调用root([2, -3])</p>
-<h2 id="三、matlab微积分"><a href="#三、matlab微积分" class="headerlink" title="三、matlab微积分"></a>三、matlab微积分</h2><p>MATLAB提供了解决微分和积分微积分的各种方法，求解任何程度的微分方程和极限计算。可以轻松绘制复杂功能的图形，并通过求解原始功能以及其衍生来检查图形上的最大值，最小值和其他固定点。<br><strong>计算极限</strong><br>MATLAB提供计算极限的limit函数。最基本的用法是将表达式作为参数，并在独立变量为零时找到表达式的极限。limit函数落在符号计算域; 需要使用syms函数来告诉MATLAB正在使用的符号变量。例子：要计算(x^2+6)/(x^3+4)的极限,要这样输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sysm x</span><br><span class="line">limit((x^2+6)/(x^3+4))</span><br></pre></td></tr></table></figure></p>
-<p>limit函数还可以计算函数的极限，因为变量趋向于除零之外的某个数字，即是在表达式这个参数后面，输入要变量要趋进的数。例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sysm x</span><br><span class="line">limit((x^2+6)/(x^3+9), 3)</span><br></pre></td></tr></table></figure></p>
-<p>limit可以通过将字符串“left”和“right”作为最后一个参数传递给limit命令来计算左侧和右侧的极限。</p>
-<h2 id="四、matlab微分和导数"><a href="#四、matlab微分和导数" class="headerlink" title="四、matlab微分和导数"></a>四、matlab微分和导数</h2><p>matlab提供用于计算符号导数的diff命令。 以最简单的形式，将要微分的功能传递给diff命令作为参数。例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">syms t</span><br><span class="line">m = 2t^2+3t+6</span><br><span class="line">diff(m)</span><br></pre></td></tr></table></figure></p>
-<p>要计算高阶导数，即是在diff函数后面多加所求导数的结束即可<br><strong>计算曲线的最大值和最小值</strong><br>要计算曲线的最大最小值，就是通过对曲线所对应的函数进行求导，并令其等于零时，得到的解的函数值。对于函数<script type="math/tex">y = f(x)</script>，图形具有零斜率的图上的点称为固定点。 换句话说，固定点是<script type="math/tex">f'(x)= 0</script>要找到微分的函数的固定点，需要将导数设置为零并求解方程。<br><strong>求解微分方程</strong><br>matlab提供dslove函数来求解微分方程，其中slove函数的最基本的用法是dsolve(‘eqn’),eqn指的是文本内容，即是要求微分方程的文本形式，具体来说是eqn就是微分方程加上单引号。<br>对于高阶的微分方程，采用的是D导数的顺序表示。例子：要求<script type="math/tex">y''+ 2y' + y + 2x + 1 = 0</script>,matlab的命令为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dsolve(&apos;D2y +  2*Dy + y +2*x +1 = 0&apos;)</span><br></pre></td></tr></table></figure></p>
-<h2 id="五、matlab整合集成"><a href="#五、matlab整合集成" class="headerlink" title="五、matlab整合集成"></a>五、matlab整合集成</h2><ol>
-<li>不定积分<br>matlab中使用int函数求出函数的不定积分，这个函数的参数直接就是要求不定积分的方程</li>
-<li>定积分<br>使用int函数求积分，传入下上限作为int的第二和第三个参数。</li>
-</ol>
-<h2 id="六、matlab转换"><a href="#六、matlab转换" class="headerlink" title="六、matlab转换"></a>六、matlab转换</h2><p>matlab提供了处理转换的命令，如拉普拉斯和傅里叶变换。转换在科学和工程中被用作简化分析和从另一个角度看待数据的工具。MATLAB提供了laplace，fourier和fft命令来处理拉普拉斯，傅立叶和快速傅里叶转换。<br>拉普拉斯变换采用的是laplace函数,其逆变换采用的是ilaplace。<br>傅立叶变换采用的是fourier函数，其逆变换采用的是ifourier。</p>
-<h2 id="七、matlab向量"><a href="#七、matlab向量" class="headerlink" title="七、matlab向量"></a>七、matlab向量</h2><ol>
-<li>matlab中向量的加减法和标量的乘法都比较简单，不作详细的记录。</li>
-<li>MATLAB中转置操作使用一个单引号（’）来表示。</li>
-<li>MATLAB 允许在原有的向量中附加向量，共同创造新的向量，若是将两个向量用逗号或者空格隔开，即是增加向量的行数，若是将两个向量用分号隔开，即是增加向量的列数。<br>最后是<a href="https://www.yiibai.com/matlab" title="教程" target="_blank" rel="noopener">matlab教程来源</a></li>
-</ol>
-
+<li>调用plot函数命令<br><strong>在图上添加标题，标签，网格线和缩放</strong>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/09/matlab进阶/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
-    </div>
+    </li></ol></div>
 
     
     
@@ -1345,7 +1271,24 @@ lb < x < ub
   <script src="/js/schemes/muse.js?v=7.3.0"></script>
 
 
-<script src="/js/next-boot.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 
 
