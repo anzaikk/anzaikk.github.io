@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.8.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    save_scroll: false,
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    }
+  };
+</script>
+
+  <meta name="description" content="线性规划只能解决一组线性约束条件下,某一目标只能是一个目标的最大或最小值的问题。但是实际决策中,衡量方案优劣要考虑多个目标。所以需要目标规划模型，模型中的这些目标中,有主要的,也有次要的;有最大值的,也有最小值的;有定量的,也有定性的;有相互补充的。 1. 目标函数的求解思路 加权系数法为每一目标赋一个权系数,把多目标模型转化成单一目标的模型。但困难是要确定合理的权系数,以反映不同目标之间的重要程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="目标规划">
+<meta property="og:url" content="http://yoursite.com/2019/08/12/目标规划/index.html">
+<meta property="og:site_name" content="anzaikk">
+<meta property="og:description" content="线性规划只能解决一组线性约束条件下,某一目标只能是一个目标的最大或最小值的问题。但是实际决策中,衡量方案优劣要考虑多个目标。所以需要目标规划模型，模型中的这些目标中,有主要的,也有次要的;有最大值的,也有最小值的;有定量的,也有定性的;有相互补充的。 1. 目标函数的求解思路 加权系数法为每一目标赋一个权系数,把多目标模型转化成单一目标的模型。但困难是要确定合理的权系数,以反映不同目标之间的重要程">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-13T10:57:19.390Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="目标规划">
+<meta name="twitter:description" content="线性规划只能解决一组线性约束条件下,某一目标只能是一个目标的最大或最小值的问题。但是实际决策中,衡量方案优劣要考虑多个目标。所以需要目标规划模型，模型中的这些目标中,有主要的,也有次要的;有最大值的,也有最小值的;有定量的,也有定性的;有相互补充的。 1. 目标函数的求解思路 加权系数法为每一目标赋一个权系数,把多目标模型转化成单一目标的模型。但困难是要确定合理的权系数,以反映不同目标之间的重要程">
+  <link rel="canonical" href="http://yoursite.com/2019/08/12/目标规划/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>目标规划 | anzaikk</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  <div class="container sidebar-position-left">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">anzaikk</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/12/目标规划/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="anzaikk">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="anzaikk">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">目标规划
+
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-08-12 22:32:50" itemprop="dateCreated datePublished" datetime="2019-08-12T22:32:50+08:00">2019-08-12</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-13 18:57:19" itemprop="dateModified" datetime="2019-08-13T18:57:19+08:00">2019-08-13</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>线性规划只能解决一组线性约束条件下,某一目标只能是一个目标的最大或最小值的问题。但是实际决策中,衡量方案优劣要考虑多个目标。所以需要目标规划模型，模型中的这些目标中,有主要的,也有次要的;有最大值的,也有最小值的;有定量的,也有定性的;有相互补充的。</p>
+<h3 id="1-目标函数的求解思路"><a href="#1-目标函数的求解思路" class="headerlink" title="1. 目标函数的求解思路"></a>1. 目标函数的求解思路</h3><ul>
+<li><strong>加权系数法</strong><br>为每一目标赋一个权系数,把多目标模型转化成单一目标的模型。但困难是要确定合理的权系数,以反映不同目标之间的重要程度。</li>
+<li><strong>优先等级法</strong><br>将各目标按其重要程度不同的优先等级,转化为单目标模型。</li>
+<li><strong>有效解法</strong><br>寻求能够照顾到各个目标,并使决策者感到满意的解。由决策者来确定选取哪一个解,即得到一个满意解。但有效解的数目太多而难以将其一一求出。</li>
+</ul>
+<h3 id="2-目标规划的数学模型"><a href="#2-目标规划的数学模型" class="headerlink" title="2. 目标规划的数学模型"></a>2. 目标规划的数学模型</h3><p>为了具体说明目标规划与线性规划在处理问题的方法上的区别,先通过例子来介绍目标规划的有关概念及数学模型。<br>某工厂生产 I,II 两种产品,已知有关数据见下表:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>I</th>
+<th>II</th>
+<th>拥有量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原料</td>
+<td>2</td>
+<td>1</td>
+<td>11</td>
+</tr>
+<tr>
+<td>设备</td>
+<td>1</td>
+<td>2</td>
+<td>10</td>
+</tr>
+<tr>
+<td>利润</td>
+<td>8</td>
+<td>10</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>是求获利最大的生产方案<br>这道题的数学模型是，设生产 I,II 产品分别为<script type="math/tex">x_1,x_2</script>则：</p>
+<script type="math/tex; mode=display">（目标函数）max z = 8x_1 + 10x_2\\
+（约束条件）s.t.
+\begin{cases}
+2x_1 + x_2 < 11\\
+x_1 + 2x_2 < 10\\
+x_1,x_2 > 0
+\end{cases}</script><p>最优决策方案为: <script type="math/tex">x_{1}^*= 4 , x_{2}^* = 3 , z = 62</script>元。<br>但实际上工厂在作决策方案时,要考虑市场等一系列其它条件。如</p>
+<ol>
+<li>根据市场信息,产品 I 的销售量有下降的趋势,故考虑产品 I 的产量不大于产品 II。</li>
+<li>超过计划供应的原材料,需要高价采购,这就使成本增加。</li>
+<li>应尽可能充分利用设备,但不希望加班。</li>
+<li>应尽可能达到并超过计划利润指标 56 元。</li>
+</ol>
+<p>有了这一系列的条件之后，简单的线性规划不足以解决这样的问题，所以要用目标规划这种数学模型。<br><strong>下面引入与建立目标规划数学模型有关的概念。</strong></p>
+<ol>
+<li><strong>正，负偏差变量</strong><br>设 d 为决策变量的函数,正偏差变量<script type="math/tex">d^+ = max{d, d^0, 0}</script>表示决策值超过目标值的部分,负偏差变量<script type="math/tex">d^- =max{d, d^0, 0}</script>表示决策值未达到目标值的部分,这里<script type="math/tex">d^0</script>表示d的目标值。其中<script type="math/tex">d^+,d^-</script>是同类型的数，因决策值不可能既超过目标值同时又未达到目标值,即恒有<script type="math/tex">d^+ * d^- = 0</script>。</li>
+<li><strong>绝对(刚性)约束和目标约束</strong><br>绝对约束是指必须严格满足的等式约束和不等式约束;如线性规划问题的所有约束条件,不能满足这些约束条件的解称为非可行解,所以它们是硬约束。<br>目标约束是目标规划特有的,可把约束右端项看作要追求的目标值。在达到此目标值时允许发生正或负偏差,因此在这些约束中加入正、负偏差变量,它们是软约束。</li>
+<li><strong>优先因子(优先等级)与权系数</strong><br>一个规划问题常常有若干目标。但决策者在要求达到这些目标时,是有主次或轻重缓急的不同。凡要求第一位达到的目标赋于优先因子<script type="math/tex">P_1</script>，其他的以此类推，例如：<script type="math/tex">P_k</script>比<script type="math/tex">P_{k+1}</script>的优先级高。赋于它们不同的权系数<script type="math/tex">w_j</script>，区别具有相同优先因子的两个目标的区别。</li>
+<li><strong>目标规划的目标函数</strong><br>目标规划的目标函数(准则函数)是按各目标约束的正、负偏差变量和赋于相应的优先因子而构造的。主要有三种形式。</li>
+</ol>
+<ul>
+<li>要求恰好达到目标值,即正、负偏差变量都要尽可能地小,这时<script type="math/tex; mode=display">min z = f ( d^+ + d^− )</script></li>
+<li>要求不超过目标值,即允许达不到目标值,就是正偏差变量要尽可能地小,这时<script type="math/tex; mode=display">minz = f(d^+)</script></li>
+<li>要求超过目标值,即超过量不限,但必须是负偏差变量要尽可能地小,这时<script type="math/tex; mode=display">min z = f ( d^− )</script>对每一个具体目标规划问题,可根据决策者的要求和赋于各目标的优先因子来构造目标函数。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+              <a href="/2019/08/10/动态规划/" rel="next" title="动态规划">
+                <i class="fa fa-chevron-left"></i> 动态规划
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+              <a href="/2019/08/13/logistic模型/" rel="prev" title="logistic回归">
+                logistic回归 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">anzaikk</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-目标函数的求解思路"><span class="nav-number">1.</span> <span class="nav-text">1. 目标函数的求解思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-目标规划的数学模型"><span class="nav-number">2.</span> <span class="nav-text">2. 目标规划的数学模型</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">anzaikk</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+      </div>
+
+    
+
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.3.0"></script>
+  <script src="/js/motion.js?v=7.3.0"></script>
+
+
+  <script src="/js/schemes/muse.js?v=7.3.0"></script>
+
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+  <script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
+
+
+</body>
+</html>
