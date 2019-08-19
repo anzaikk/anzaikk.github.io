@@ -54,17 +54,17 @@
   };
 </script>
 
-  <meta name="description" content="描述一类重要的随机动态过程的模型，时间和状态都是离散的随机转移过程。  系统在每个时期所处的状态是随机的 下时期状态只确定于本时期的状态和转移概率">
+  <meta name="description" content="描述一类重要的随机动态过程的模型，时间和状态都是离散的随机转移过程。  系统在每个时期所处的状态是随机的 下时期状态只确定于本时期的状态和转移概率基本概念状态概率&amp;ensp;a_i(n) = P(X_n = i),i = 1,2,3..k, n = 0,1...转移概率&amp;ensp;P_{ij} = P(X_{n+1} = j|X_n = i), p_{ij}&amp;gt;=0,i = 1,2,3...k,n状">
 <meta property="og:type" content="article">
 <meta property="og:title" content="马氏链模型">
 <meta property="og:url" content="http://yoursite.com/2019/08/17/马氏链模型/index.html">
 <meta property="og:site_name" content="anzaikk">
-<meta property="og:description" content="描述一类重要的随机动态过程的模型，时间和状态都是离散的随机转移过程。  系统在每个时期所处的状态是随机的 下时期状态只确定于本时期的状态和转移概率">
+<meta property="og:description" content="描述一类重要的随机动态过程的模型，时间和状态都是离散的随机转移过程。  系统在每个时期所处的状态是随机的 下时期状态只确定于本时期的状态和转移概率基本概念状态概率&amp;ensp;a_i(n) = P(X_n = i),i = 1,2,3..k, n = 0,1...转移概率&amp;ensp;P_{ij} = P(X_{n+1} = j|X_n = i), p_{ij}&amp;gt;=0,i = 1,2,3...k,n状">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-19T13:20:56.290Z">
+<meta property="og:updated_time" content="2019-08-19T14:06:06.403Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="马氏链模型">
-<meta name="twitter:description" content="描述一类重要的随机动态过程的模型，时间和状态都是离散的随机转移过程。  系统在每个时期所处的状态是随机的 下时期状态只确定于本时期的状态和转移概率">
+<meta name="twitter:description" content="描述一类重要的随机动态过程的模型，时间和状态都是离散的随机转移过程。  系统在每个时期所处的状态是随机的 下时期状态只确定于本时期的状态和转移概率基本概念状态概率&amp;ensp;a_i(n) = P(X_n = i),i = 1,2,3..k, n = 0,1...转移概率&amp;ensp;P_{ij} = P(X_{n+1} = j|X_n = i), p_{ij}&amp;gt;=0,i = 1,2,3...k,n状">
   <link rel="canonical" href="http://yoursite.com/2019/08/17/马氏链模型/">
 
 
@@ -238,7 +238,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-19 21:20:56" itemprop="dateModified" datetime="2019-08-19T21:20:56+08:00">2019-08-19</time>
+                <time title="Modified: 2019-08-19 22:06:06" itemprop="dateModified" datetime="2019-08-19T22:06:06+08:00">2019-08-19</time>
               </span>
             
           
@@ -257,8 +257,7 @@
         <p>描述一类重要的随机动态过程的模型，时间和状态都是离散的随机转移过程。</p>
 <ul>
 <li>系统在每个时期所处的状态是随机的</li>
-<li>下时期状态只确定于本时期的状态和转移概率<a id="more"></a>
-<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><strong>状态概率</strong>&ensp;<script type="math/tex">a_i(n) = P(X_n = i),i = 1,2,3..k, n = 0,1...</script><br><strong>转移概率</strong>&ensp;<script type="math/tex">P_{ij} = P(X_{n+1} = j|X_n = i), p_{ij}>=0,i = 1,2,3...k,n</script><br><strong>状态转移基本方程</strong>&ensp;<script type="math/tex">a_i(n+1) = \sum_{j = 1}^{k}a_j(n)p_{ji},i = 1,2...,k,n</script><br><strong>状态概率向量</strong>&ensp; <script type="math/tex">a(n) = (a_1(n),a_1(n),...a_k(n))</script><br><strong>转移概率矩阵</strong>&ensp; <script type="math/tex">P= {p_{ij}}_{k*k}</script></li>
+<li>下时期状态只确定于本时期的状态和转移概率<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><strong>状态概率</strong>&ensp;<script type="math/tex">a_i(n) = P(X_n = i),i = 1,2,3..k, n = 0,1...</script><br><strong>转移概率</strong>&ensp;<script type="math/tex">P_{ij} = P(X_{n+1} = j|X_n = i), p_{ij}>=0,i = 1,2,3...k,n</script><br><strong>状态转移基本方程</strong>&ensp;<script type="math/tex">a_i(n+1) = \sum_{j = 1}^{k}a_j(n)p_{ji},i = 1,2...,k,n</script><br><strong>状态概率向量</strong>&ensp; <script type="math/tex">a(n) = (a_1(n),a_1(n),...a_k(n))</script><br><strong>转移概率矩阵</strong>&ensp; <script type="math/tex">P= {p_{ij}}_{k*k}</script></li>
 </ul>
 
     </div>
