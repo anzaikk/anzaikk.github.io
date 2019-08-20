@@ -61,7 +61,7 @@
 <meta property="og:site_name" content="anzaikk">
 <meta property="og:description" content="一、latex的简洁介绍流行的TeX的版本，比如CTeX和TeXlive,都有自带的编辑器。国内用的比较多的是CTeX,而其自带的编辑器是TeXworks。TeX的排版工具主要有pdfTeX, pdfLaTeX,XeLaTeX等，其中CTex自带的排版工具是pdfLaTeX。关于中文显示的问题，XeTeX原生支持Unicode，很好的解决了中文显示的内容。使用ctex宏包能够一次性的解决所有的中文">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-19T14:06:21.377Z">
+<meta property="og:updated_time" content="2019-08-20T17:01:29.801Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="latex基本知识">
 <meta name="twitter:description" content="一、latex的简洁介绍流行的TeX的版本，比如CTeX和TeXlive,都有自带的编辑器。国内用的比较多的是CTeX,而其自带的编辑器是TeXworks。TeX的排版工具主要有pdfTeX, pdfLaTeX,XeLaTeX等，其中CTex自带的排版工具是pdfLaTeX。关于中文显示的问题，XeTeX原生支持Unicode，很好的解决了中文显示的内容。使用ctex宏包能够一次性的解决所有的中文">
@@ -238,7 +238,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-19 22:06:21" itemprop="dateModified" datetime="2019-08-19T22:06:21+08:00">2019-08-19</time>
+                <time title="Modified: 2019-08-21 01:01:29" itemprop="dateModified" datetime="2019-08-21T01:01:29+08:00">2019-08-21</time>
               </span>
             
           
@@ -329,6 +329,16 @@
 </ul>
 <h1 id="七、页边距"><a href="#七、页边距" class="headerlink" title="七、页边距"></a>七、页边距</h1><p>设置页边距使用的是宏包geometry。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;geometry&#125;</span><br><span class="line">\geometry&#123;papersize&#123;20cm,15cm&#125;&#125;</span><br><span class="line">\geometry&#123;left = 0.1,right = 0.2, top = 0.3, bottom = 0.5&#125;</span><br></pre></td></tr></table></figure></p>
 <h1 id="八、首行缩进问题"><a href="#八、首行缩进问题" class="headerlink" title="八、首行缩进问题"></a>八、首行缩进问题</h1><p>为了解决首行缩进问题，我们可以在导言区调用\usepackage{indentfirst}。</p>
+<h1 id="九、杂七杂八"><a href="#九、杂七杂八" class="headerlink" title="九、杂七杂八"></a>九、杂七杂八</h1><p>1、分页：\newpage、\pagebreak<br>2、字体：</p>
+<ul>
+<li>\rmfamily,\textrm{}一般使用在正文的罗马字体</li>
+<li>\sffamily一般使用在标题中,\texts{}</li>
+<li>\ttfamily等宽字体一般使用在代码中,\texttt{}</li>
+</ul>
+<p>3、对齐命令：\centering、\raggedleft、\raggedright<br>4、空白间距：\hspace{2cm}、\vspace{2ex},第一个是水平间距，第二个是垂直间距。<br>5、断行：\linebreak、\\\\<br>6、参考文献：<br><strong>使用的是bibtex工具：</strong><br>1、新建.bib文件，然后将引用的内容粘帖进去，并将它与主文件放在同一个文件夹中<br>2、主文件夹中内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">先在文章的开头写进控制序列\bibliographystyle&#123;&#125; 花括号可以使用plain,alpha,abbrv,amsplain,elsarticle-num</span><br><span class="line">\cite() 括号的内容是所复制的内容的开头的括号的内容</span><br><span class="line">\bibliography() 括号填写的内容是.bib的名称</span><br></pre></td></tr></table></figure></p>
+<p>3、完整的命令行的编译的方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">xelatex 名称</span><br><span class="line">bibtex 名称</span><br><span class="line">xelatex 名称</span><br><span class="line">xelatex 名称</span><br><span class="line">或者使用latexmk一个指令完成</span><br><span class="line">latexmk -xelatex 名称</span><br></pre></td></tr></table></figure></p>
+<p><strong>使用gbt7714宏包</strong><br>gbt7714宏包符合GB\T7714-2015的中国参考文献的推荐标准，有super,numbers,authoryear三个选项。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\usepackage[numbers]&#123;gbt7714&#125;</span><br><span class="line">\cite()</span><br><span class="line">\bibliography()</span><br></pre></td></tr></table></figure></p>
+<p>7、tex说明文档<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">texdoc 宏包</span><br></pre></td></tr></table></figure></p>
 <h1 id="本文参考"><a href="#本文参考" class="headerlink" title="本文参考"></a><a href="https://www.latexstudio.net/archives/2323.html" target="_blank" rel="noopener">本文参考</a></h1>
     </div>
 
@@ -423,7 +433,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、latex的简洁介绍"><span class="nav-number">1.</span> <span class="nav-text">一、latex的简洁介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、作者，日期，标题"><span class="nav-number">2.</span> <span class="nav-text">二、作者，日期，标题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、章节和段落"><span class="nav-number">3.</span> <span class="nav-text">三、章节和段落</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、插入目录"><span class="nav-number">4.</span> <span class="nav-text">四、插入目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、数学模式"><span class="nav-number">5.</span> <span class="nav-text">五、数学模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、插入表格与图片"><span class="nav-number">6.</span> <span class="nav-text">六、插入表格与图片</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、页边距"><span class="nav-number">7.</span> <span class="nav-text">七、页边距</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#八、首行缩进问题"><span class="nav-number">8.</span> <span class="nav-text">八、首行缩进问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本文参考"><span class="nav-number">9.</span> <span class="nav-text">本文参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、latex的简洁介绍"><span class="nav-number">1.</span> <span class="nav-text">一、latex的简洁介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、作者，日期，标题"><span class="nav-number">2.</span> <span class="nav-text">二、作者，日期，标题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、章节和段落"><span class="nav-number">3.</span> <span class="nav-text">三、章节和段落</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、插入目录"><span class="nav-number">4.</span> <span class="nav-text">四、插入目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、数学模式"><span class="nav-number">5.</span> <span class="nav-text">五、数学模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、插入表格与图片"><span class="nav-number">6.</span> <span class="nav-text">六、插入表格与图片</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、页边距"><span class="nav-number">7.</span> <span class="nav-text">七、页边距</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#八、首行缩进问题"><span class="nav-number">8.</span> <span class="nav-text">八、首行缩进问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#九、杂七杂八"><span class="nav-number">9.</span> <span class="nav-text">九、杂七杂八</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本文参考"><span class="nav-number">10.</span> <span class="nav-text">本文参考</span></a></li></ol></div>
             
 
           </div>
