@@ -55,17 +55,17 @@
   };
 </script>
 
-  <meta name="description" content="在ubuntu下利用命令行”latexmk -xelatex+文件名”latex源文件的时候有时候会出现错误1fontspec error :&amp;quot;font-not-found&amp;quot; 这是因为系统中没有安装楷体解决的方法是：  准备字体从windows系统中拷贝出字体，一般字体的目录是c:\windows\fonts 将拷贝出来的字体放在ubuntu的目录\usr\share\font">
+  <meta name="description" content="在ubuntu下利用命令行”latexmk -xelatex+文件名”latex源文件的时候有时候会出现错误 1fontspec error :&amp;quot;font-not-found&amp;quot;  这是因为系统中没有安装楷体解决的方法是：  准备字体从windows系统中拷贝出字体，一般字体的目录是c:\windows\fonts 将拷贝出来的字体放在ubuntu的目录\usr\share\fo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu中latex解决font-not-found问题">
 <meta property="og:url" content="http://yoursite.com/2019/08/23/font-not-found”/index.html">
 <meta property="og:site_name" content="anzaikk">
-<meta property="og:description" content="在ubuntu下利用命令行”latexmk -xelatex+文件名”latex源文件的时候有时候会出现错误1fontspec error :&amp;quot;font-not-found&amp;quot; 这是因为系统中没有安装楷体解决的方法是：  准备字体从windows系统中拷贝出字体，一般字体的目录是c:\windows\fonts 将拷贝出来的字体放在ubuntu的目录\usr\share\font">
+<meta property="og:description" content="在ubuntu下利用命令行”latexmk -xelatex+文件名”latex源文件的时候有时候会出现错误 1fontspec error :&amp;quot;font-not-found&amp;quot;  这是因为系统中没有安装楷体解决的方法是：  准备字体从windows系统中拷贝出字体，一般字体的目录是c:\windows\fonts 将拷贝出来的字体放在ubuntu的目录\usr\share\fo">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-08-23T08:50:25.152Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu中latex解决font-not-found问题">
-<meta name="twitter:description" content="在ubuntu下利用命令行”latexmk -xelatex+文件名”latex源文件的时候有时候会出现错误1fontspec error :&amp;quot;font-not-found&amp;quot; 这是因为系统中没有安装楷体解决的方法是：  准备字体从windows系统中拷贝出字体，一般字体的目录是c:\windows\fonts 将拷贝出来的字体放在ubuntu的目录\usr\share\font">
+<meta name="twitter:description" content="在ubuntu下利用命令行”latexmk -xelatex+文件名”latex源文件的时候有时候会出现错误 1fontspec error :&amp;quot;font-not-found&amp;quot;  这是因为系统中没有安装楷体解决的方法是：  准备字体从windows系统中拷贝出字体，一般字体的目录是c:\windows\fonts 将拷贝出来的字体放在ubuntu的目录\usr\share\fo">
   <link rel="canonical" href="http://yoursite.com/2019/08/23/font-not-found”/">
 
 
@@ -276,12 +276,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>在ubuntu下利用命令行”latexmk -xelatex+文件名”latex源文件的时候有时候会出现错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fontspec error :&quot;font-not-found&quot;</span><br></pre></td></tr></table></figure></p>
+        <p>在ubuntu下利用命令行”latexmk -xelatex+文件名”latex源文件的时候有时候会出现错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fontspec error :&quot;font-not-found&quot;</span><br></pre></td></tr></table></figure>
+
 <p>这是因为系统中没有安装楷体<br>解决的方法是：</p>
 <ol>
 <li>准备字体<br>从windows系统中拷贝出字体，一般字体的目录是c:\windows\fonts</li>
 <li>将拷贝出来的字体放在ubuntu的目录\usr\share\fonts中</li>
 <li>导出字体<br>在终端中数学以下命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mkfontscale</span><br><span class="line">sudo mkfontdir</span><br><span class="line">sudo fc-cache -fv</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
 <p>命令执行成功后终端会显示fc-cache:succeeded</p>
@@ -425,6 +428,9 @@
   
 
 
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   <script src="/lib/anime.min.js?v=3.1.0"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
