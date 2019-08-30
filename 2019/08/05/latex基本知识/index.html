@@ -284,19 +284,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="一、latex的简洁介绍"><a href="#一、latex的简洁介绍" class="headerlink" title="一、latex的简洁介绍"></a>一、latex的简洁介绍</h1><p>流行的TeX的版本，比如CTeX和TeXlive,都有自带的编辑器。国内用的比较多的是CTeX,而其自带的编辑器是TeXworks。<br>TeX的排版工具主要有pdfTeX, pdfLaTeX,XeLaTeX等，其中CTex自带的排版工具是pdfLaTeX。关于中文显示的问题，<br>XeTeX原生支持Unicode，很好的解决了中文显示的内容。使用ctex宏包能够一次性的解决所有的中文显示的问题主要的<br>代码为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">你好,world.</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
-
+        <h1 id="一、latex的简洁介绍"><a href="#一、latex的简洁介绍" class="headerlink" title="一、latex的简洁介绍"></a>一、latex的简洁介绍</h1><p>流行的TeX的版本，比如CTeX和TeXlive,都有自带的编辑器。国内用的比较多的是CTeX,而其自带的编辑器是TeXworks。<br>TeX的排版工具主要有pdfTeX, pdfLaTeX,XeLaTeX等，其中CTex自带的排版工具是pdfLaTeX。关于中文显示的问题，<br>XeTeX原生支持Unicode，很好的解决了中文显示的内容。使用ctex宏包能够一次性的解决所有的中文显示的问题主要的<br>代码为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">你好,world.</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
 <p>其中以反斜杠\开头，以空格或者非字符结束的一段文字，就是控制序列，如上面的\documentclass。控制序列并不会直接<br>输出，但是会形象文本的输出效果。代码中{ctexart}代表的是控制序列的必要参数。</p>
 <h1 id="二、作者，日期，标题"><a href="#二、作者，日期，标题" class="headerlink" title="二、作者，日期，标题"></a>二、作者，日期，标题</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line">\title&#123;anzaikk&#125;</span><br><span class="line">\author&#123;anzaikk&#125;</span><br><span class="line">\data&#123;\today&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">maketitle</span><br><span class="line">你好，world.</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
-
 <p>代码中紧跟控制序列\documentclass后面的[UTF8]表示的是可选参数，可以增强显示功能。控制序列\maketitle，<br>作用是可以让作者，日期，标题按照预定的效果展示出来。</p>
-<h1 id="三、章节和段落"><a href="#三、章节和段落" class="headerlink" title="三、章节和段落"></a>三、章节和段落</h1><p>在ctexart\article中定义了五大控制序列来调整文章的行文，分别是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\section&#123;.&#125;</span><br><span class="line">\subsection&#123;.&#125;</span><br><span class="line">\subsubsection&#123;.&#125;</span><br><span class="line">\paragraph&#123;.&#125;</span><br><span class="line">\subparagraph&#123;.&#125;</span><br></pre></td></tr></table></figure>
-
+<h1 id="三、章节和段落"><a href="#三、章节和段落" class="headerlink" title="三、章节和段落"></a>三、章节和段落</h1><p>在ctexart\article中定义了五大控制序列来调整文章的行文，分别是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\section&#123;.&#125;</span><br><span class="line">\subsection&#123;.&#125;</span><br><span class="line">\subsubsection&#123;.&#125;</span><br><span class="line">\paragraph&#123;.&#125;</span><br><span class="line">\subparagraph&#123;.&#125;</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>例子<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line">\title&#123;例子&#125;</span><br><span class="line">\author&#123;anzaikk&#125;</span><br><span class="line">\data&#123;\today&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\section&#123;世界&#125;</span><br><span class="line">世界是团结有爱的</span><br><span class="line">\subsection&#123;中国&#125;</span><br><span class="line">中国是团结有爱的</span><br><span class="line">\subsubsection&#123;广东&#125;</span><br><span class="line">广东是团结友爱的</span><br><span class="line">\paragraph&#123;茂名&#125;</span><br><span class="line">是团结有爱的</span><br><span class="line">\subparagraph&#123;信宜&#125;</span><br><span class="line">是团结有爱的</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
-
 </li>
 </ul>
 <h1 id="四、插入目录"><a href="#四、插入目录" class="headerlink" title="四、插入目录"></a>四、插入目录</h1><p>在控制序列\maketitle下面或者上面插入控制序列\tableofcontents,再编译两次就能够插入目录</p>
@@ -304,19 +298,18 @@
 <li><p><strong>插入数学公式</strong><br>编写数学公式，使用的是AMS-LaTeX提供的数学模式的功能，首先要在引言区加入amsmath宏包。代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;amsmath&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><strong>数学模式</strong><br>LaTeX的数学模式有两种，一种是行间模式，一种是行内模式。具体实现是行内模式$—$,行间模式具体<br>\[—\],使用equation环境begin{equation}。</p>
+<li><p><strong>数学模式</strong><br>LaTeX的数学模式有两种，一种是行间模式，一种是行内模式。具体实现是行内模式$—-$,行间模式具体<br>\[—-\],使用equation环境begin{equation}。</p>
 </li>
 </ol>
 <ul>
 <li><p>上下标</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line">\usepackage&#123;amsmath&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">$E = mc^2$</span><br><span class="line">\[E = mc^2\]</span><br><span class="line">\begin&#123;eqation&#125;</span><br><span class="line">E = mc^2</span><br><span class="line">\end&#123;eqation&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>根式和分式<br>根式\sqrt{–}，分式\frac{-}{-}表示。例子</p>
+<li><p>根式和分式<br>根式\sqrt{—}，分式\frac{-}{-}表示。例子</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line">\usepackage&#123;amsmath&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">frac&#123;sqrt&#123;2&#125;&#125;&#123;2&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>运算符<br>一些小的运算符可以直接在数学模式中输出，但是有一些要借助控制序列，如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\[ \pm\; \times \; \div\; \cdot\; \cap\; \cup\;</span><br><span class="line">\geq\; \leq\; \neq\; \approx \; \equiv \]</span><br></pre></td></tr></table></figure>
-
 </li>
 </ul>
 <p>连乘，连加，积分，极限这些大型的运算符用控制序列\prod,\sum,\int,\lim表示，这些都是压缩行高的，<br>我们可以用\limits和\nolimits来强制显式地指定是否压缩这些上下标。<br>多重积分用\int,\iint,\iiint。</p>
@@ -340,6 +333,7 @@
 <li><p>希腊字符</p>
 </li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -347,39 +341,23 @@
 <th>描述说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>\lambda</td>
-<td>\lambda</td>
+<td>\\lambda</td>
 </tr>
-<tr>
-<td># 六、插入表格与图片</td>
-<td></td>
-</tr>
-<tr>
-<td>+ 插入图片</td>
-<td></td>
-</tr>
-<tr>
-<td>LaTeX中插入图片的方式有很多，其中可以用graphicx宏包提供的\includegraphics控制序列</td>
-<td></td>
-</tr>
-<tr>
-<td>例子：</td>
-<td></td>
-</tr>
-<tr>
-<td><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line">\usepackage&#123;graphicx&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\includegraphics[width = .8\texwidth]&#123;url&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></td>
-<td></td>
-</tr>
-</tbody></table>
-<ul>
-<li>插入表格<br>tabular环境提供了最简单的表格功能。它用\hline命令表示横线，|表示竖线；用&amp;来分列，用\来换行；每列可以采用居中、居左、居右等横向对齐方式，分别用l、c、r 来表示。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;tabular&#125;&#123;l|c|r&#125;</span><br><span class="line">\hline</span><br><span class="line">a&amp;b&amp;c\\</span><br><span class="line">\hline</span><br><span class="line">a&amp;b&amp;c\\</span><br><span class="line">\hline</span><br><span class="line">\end&#123;tabular&#125;</span><br></pre></td></tr></table></figure>
-
+</tbody>
+</table>
+</div>
+<h1 id="六、插入表格与图片"><a href="#六、插入表格与图片" class="headerlink" title="六、插入表格与图片"></a>六、插入表格与图片</h1><ul>
+<li><p>插入图片<br>LaTeX中插入图片的方式有很多，其中可以用graphicx宏包提供的\includegraphics控制序列<br>例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line">\usepackage&#123;graphicx&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\includegraphics[width = .8\texwidth]&#123;url&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>插入表格<br>tabular环境提供了最简单的表格功能。它用\hline命令表示横线，|表示竖线；用&amp;来分列，用\\来换行；每列可以采用居中、居左、居右等横向对齐方式，分别用l、c、r 来表示。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;tabular&#125;&#123;l|c|r&#125;</span><br><span class="line">\hline</span><br><span class="line">a&amp;b&amp;c\\</span><br><span class="line">\hline</span><br><span class="line">a&amp;b&amp;c\\</span><br><span class="line">\hline</span><br><span class="line">\end&#123;tabular&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h1 id="七、页边距"><a href="#七、页边距" class="headerlink" title="七、页边距"></a>七、页边距</h1><p>设置页边距使用的是宏包geometry。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;geometry&#125;</span><br><span class="line">\geometry&#123;papersize&#123;20cm,15cm&#125;&#125;</span><br><span class="line">\geometry&#123;left = 0.1,right = 0.2, top = 0.3, bottom = 0.5&#125;</span><br></pre></td></tr></table></figure>
-
+<h1 id="七、页边距"><a href="#七、页边距" class="headerlink" title="七、页边距"></a>七、页边距</h1><p>设置页边距使用的是宏包geometry。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;geometry&#125;</span><br><span class="line">\geometry&#123;papersize&#123;20cm,15cm&#125;&#125;</span><br><span class="line">\geometry&#123;left = 0.1,right = 0.2, top = 0.3, bottom = 0.5&#125;</span><br></pre></td></tr></table></figure></p>
 <h1 id="八、首行缩进问题"><a href="#八、首行缩进问题" class="headerlink" title="八、首行缩进问题"></a>八、首行缩进问题</h1><p>为了解决首行缩进问题，我们可以在导言区调用\usepackage{indentfirst}。</p>
 <h1 id="九、杂七杂八"><a href="#九、杂七杂八" class="headerlink" title="九、杂七杂八"></a>九、杂七杂八</h1><ol>
 <li>分页：\newpage、\pagebreak </li>
@@ -390,30 +368,24 @@
 <li>\sffamily一般使用在标题中,\texts{}</li>
 <li>\ttfamily等宽字体一般使用在代码中,\texttt{}</li>
 </ul>
-<ol start="3">
+<ol>
 <li>对齐命令：\centering、\raggedleft、\raggedright</li>
 <li>空白间距：\hspace{2cm}、\vspace{2ex},第一个是水平间距，第二个是垂直间距。</li>
-<li>断行：\linebreak、\\</li>
-<li>参考文献：</li>
-</ol>
-<p><strong>使用的是bibtex工具：</strong></p>
+<li>断行：\linebreak、\\\\</li>
+<li><p>参考文献：<br><strong>使用的是bibtex工具：</strong></p>
 <ol>
-<li><p>新建.bib文件，然后将引用的内容粘帖进去，并将它与主文件放在同一个文件夹中</p>
-</li>
+<li>新建.bib文件，然后将引用的内容粘帖进去，并将它与主文件放在同一个文件夹中</li>
 <li><p>主文件夹中内容：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">先在文章的开头写进控制序列\bibliographystyle&#123;&#125; 花括号可以使用plain,alpha,abbrv,amsplain,elsarticle-num</span><br><span class="line">\cite&#123;&#125;括号的内容是所复制的内容的开头的括号的内容</span><br><span class="line">\bibliography&#123;&#125; 括号填写的内容是.bib的名称</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>完整的命令行的编译的方法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">xelatex 名称</span><br><span class="line">bibtex 名称</span><br><span class="line">xelatex 名称</span><br><span class="line">xelatex 名称</span><br><span class="line">或者使用latexmk一个指令完成</span><br><span class="line">latexmk -xelatex 名称</span><br></pre></td></tr></table></figure>
-
 </li>
 </ol>
-<p><strong>使用gbt7714宏包</strong><br>gbt7714宏包符合GB\T7714-2015的中国参考文献的推荐标准，有super,numbers,authoryear三个选项。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\usepackage[numbers]&#123;gbt7714&#125;</span><br><span class="line">\cite&#123;&#125;</span><br><span class="line">\bibliography&#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>7.tex说明文档</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">texdoc 宏包</span><br><span class="line">latex学习文档</span><br><span class="line">texdoc</span><br></pre></td></tr></table></figure>
-
+</li>
+</ol>
+<p><strong>使用gbt7714宏包</strong><br>gbt7714宏包符合GB\T7714-2015的中国参考文献的推荐标准，有super,numbers,authoryear三个选项。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\usepackage[numbers]&#123;gbt7714&#125;</span><br><span class="line">\cite&#123;&#125;</span><br><span class="line">\bibliography&#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>7.tex说明文档<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">texdoc 宏包</span><br><span class="line">latex学习文档</span><br><span class="line">texdoc</span><br></pre></td></tr></table></figure></p>
 <h1 id="本文参考"><a href="#本文参考" class="headerlink" title="本文参考"></a><a href="https://www.latexstudio.net/archives/2323.html" target="_blank" rel="noopener">本文参考</a></h1>
     </div>
 
@@ -490,7 +462,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、latex的简洁介绍"><span class="nav-number">1.</span> <span class="nav-text">一、latex的简洁介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、作者，日期，标题"><span class="nav-number">2.</span> <span class="nav-text">二、作者，日期，标题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、章节和段落"><span class="nav-number">3.</span> <span class="nav-text">三、章节和段落</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、插入目录"><span class="nav-number">4.</span> <span class="nav-text">四、插入目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、数学模式"><span class="nav-number">5.</span> <span class="nav-text">五、数学模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、页边距"><span class="nav-number">6.</span> <span class="nav-text">七、页边距</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#八、首行缩进问题"><span class="nav-number">7.</span> <span class="nav-text">八、首行缩进问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#九、杂七杂八"><span class="nav-number">8.</span> <span class="nav-text">九、杂七杂八</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本文参考"><span class="nav-number">9.</span> <span class="nav-text">本文参考</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、latex的简洁介绍"><span class="nav-number">1.</span> <span class="nav-text">一、latex的简洁介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、作者，日期，标题"><span class="nav-number">2.</span> <span class="nav-text">二、作者，日期，标题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、章节和段落"><span class="nav-number">3.</span> <span class="nav-text">三、章节和段落</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、插入目录"><span class="nav-number">4.</span> <span class="nav-text">四、插入目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、数学模式"><span class="nav-number">5.</span> <span class="nav-text">五、数学模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、插入表格与图片"><span class="nav-number">6.</span> <span class="nav-text">六、插入表格与图片</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、页边距"><span class="nav-number">7.</span> <span class="nav-text">七、页边距</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#八、首行缩进问题"><span class="nav-number">8.</span> <span class="nav-text">八、首行缩进问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#九、杂七杂八"><span class="nav-number">9.</span> <span class="nav-text">九、杂七杂八</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本文参考"><span class="nav-number">10.</span> <span class="nav-text">本文参考</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
