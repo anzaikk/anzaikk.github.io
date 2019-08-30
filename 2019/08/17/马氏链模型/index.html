@@ -62,7 +62,7 @@
 <meta property="og:site_name" content="anzaikk">
 <meta property="og:description" content="描述一类重要的随机动态过程的模型，时间和状态都是离散的随机转移过程。  系统在每个时期所处的状态是随机的 下时期状态只确定于本时期的状态和转移概率基本概念状态概率&amp;ensp;a_i(n) = P(X_n = i),i = 1,2,3..k, n = 0,1...转移概率&amp;ensp;P_{ij} = P(X_{n+1} = j|X_n = i), p_{ij}&amp;gt;=0,i = 1,2,3...k,n状">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-19T14:06:06.403Z">
+<meta property="og:updated_time" content="2019-08-30T15:14:20.656Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="马氏链模型">
 <meta name="twitter:description" content="描述一类重要的随机动态过程的模型，时间和状态都是离散的随机转移过程。  系统在每个时期所处的状态是随机的 下时期状态只确定于本时期的状态和转移概率基本概念状态概率&amp;ensp;a_i(n) = P(X_n = i),i = 1,2,3..k, n = 0,1...转移概率&amp;ensp;P_{ij} = P(X_{n+1} = j|X_n = i), p_{ij}&amp;gt;=0,i = 1,2,3...k,n状">
@@ -268,7 +268,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-19 22:06:06" itemprop="dateModified" datetime="2019-08-19T22:06:06+08:00">2019-08-19</time>
+                <time title="Modified: 2019-08-30 23:14:20" itemprop="dateModified" datetime="2019-08-30T23:14:20+08:00">2019-08-30</time>
               </span>
             
           
@@ -442,51 +442,84 @@
 <script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 
-<script src="/js/next-boot.js?v=7.3.0"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
 
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
 <script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
   MathJax.Hub.Queue(function() {
     var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
     }
   });
 </script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
+    
   
 
   

@@ -62,7 +62,7 @@
 <meta property="og:site_name" content="anzaikk">
 <meta property="og:description" content="动态规划是求解某类问题的一种方法,是考察问题的一种途径,而不是一种特殊算法(如线性规划是一种算法)。它不像线性规划那样有一个标准的数学表达式和明确定义的一组规则,而必须对具体问题进行具体分析处理。 1. 决策过程的分类根据过程的时间变量是离散的还是连续的,分为离散时间决策过程和连续时间决策过程。根据过程演变是确定的还是随机的,分为确定性决策过程和随机性决策过程。其中应用最广的是确定性多阶段决策过程">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-19T14:06:15.869Z">
+<meta property="og:updated_time" content="2019-08-30T15:13:46.322Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="动态规划">
 <meta name="twitter:description" content="动态规划是求解某类问题的一种方法,是考察问题的一种途径,而不是一种特殊算法(如线性规划是一种算法)。它不像线性规划那样有一个标准的数学表达式和明确定义的一组规则,而必须对具体问题进行具体分析处理。 1. 决策过程的分类根据过程的时间变量是离散的还是连续的,分为离散时间决策过程和连续时间决策过程。根据过程演变是确定的还是随机的,分为确定性决策过程和随机性决策过程。其中应用最广的是确定性多阶段决策过程">
@@ -268,7 +268,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-19 22:06:15" itemprop="dateModified" datetime="2019-08-19T22:06:15+08:00">2019-08-19</time>
+                <time title="Modified: 2019-08-30 23:13:46" itemprop="dateModified" datetime="2019-08-30T23:13:46+08:00">2019-08-30</time>
               </span>
             
           
@@ -441,51 +441,84 @@
 <script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 
-<script src="/js/next-boot.js?v=7.3.0"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
 
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
 <script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
   MathJax.Hub.Queue(function() {
     var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
     }
   });
 </script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
+    
   
 
   

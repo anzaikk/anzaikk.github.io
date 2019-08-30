@@ -62,7 +62,7 @@
 <meta property="og:site_name" content="anzaikk">
 <meta property="og:description" content="线性规划只能解决一组线性约束条件下,某一目标只能是一个目标的最大或最小值的问题。但是实际决策中,衡量方案优劣要考虑多个目标。所以需要目标规划模型，模型中的这些目标中,有主要的,也有次要的;有最大值的,也有最小值的;有定量的,也有定性的;有相互补充的。 1. 目标函数的求解思路 加权系数法为每一目标赋一个权系数,把多目标模型转化成单一目标的模型。但困难是要确定合理的权系数,以反映不同目标之间的重要程">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-19T14:06:12.586Z">
+<meta property="og:updated_time" content="2019-08-30T15:14:33.437Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="目标规划">
 <meta name="twitter:description" content="线性规划只能解决一组线性约束条件下,某一目标只能是一个目标的最大或最小值的问题。但是实际决策中,衡量方案优劣要考虑多个目标。所以需要目标规划模型，模型中的这些目标中,有主要的,也有次要的;有最大值的,也有最小值的;有定量的,也有定性的;有相互补充的。 1. 目标函数的求解思路 加权系数法为每一目标赋一个权系数,把多目标模型转化成单一目标的模型。但困难是要确定合理的权系数,以反映不同目标之间的重要程">
@@ -268,7 +268,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-19 22:06:12" itemprop="dateModified" datetime="2019-08-19T22:06:12+08:00">2019-08-19</time>
+                <time title="Modified: 2019-08-30 23:14:33" itemprop="dateModified" datetime="2019-08-30T23:14:33+08:00">2019-08-30</time>
               </span>
             
           
@@ -502,51 +502,84 @@ x_1,x_2 > 0
 <script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 
-<script src="/js/next-boot.js?v=7.3.0"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
 
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
 <script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
   MathJax.Hub.Queue(function() {
     var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
     }
   });
 </script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
+    
   
 
   

@@ -62,7 +62,7 @@
 <meta property="og:site_name" content="anzaikk">
 <meta property="og:description" content="小行星轨道问题中，关于二次曲线理论的公式：  椭圆的一般方程：a_1x^2 + 2a_2xy + a_3y^2 + 2a_4x + 2a_5y + 1 = 0\\ 椭圆的标准方程：\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1椭圆经过旋转和平移变换后的公式是：  \lambda_1 X^2 + \lambda_2 Y^2 + |\frac{D}{C}| = 0\\ C">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-19T14:06:16.805Z">
+<meta property="og:updated_time" content="2019-08-30T15:08:28.626Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小行星问题的二次曲线理论(椭圆部分)">
 <meta name="twitter:description" content="小行星轨道问题中，关于二次曲线理论的公式：  椭圆的一般方程：a_1x^2 + 2a_2xy + a_3y^2 + 2a_4x + 2a_5y + 1 = 0\\ 椭圆的标准方程：\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1椭圆经过旋转和平移变换后的公式是：  \lambda_1 X^2 + \lambda_2 Y^2 + |\frac{D}{C}| = 0\\ C">
@@ -268,7 +268,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-19 22:06:16" itemprop="dateModified" datetime="2019-08-19T22:06:16+08:00">2019-08-19</time>
+                <time title="Modified: 2019-08-30 23:08:28" itemprop="dateModified" datetime="2019-08-30T23:08:28+08:00">2019-08-30</time>
               </span>
             
           
@@ -443,51 +443,84 @@ D =\begin{bmatrix}a_1&a_2&a_3\\a_2&a_3&a_5\\a_4&a_5&1\end{bmatrix}</script><p>�
 <script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 
-<script src="/js/next-boot.js?v=7.3.0"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
 
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
 <script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
   MathJax.Hub.Queue(function() {
     var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
     }
   });
 </script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
+    
   
 
   
