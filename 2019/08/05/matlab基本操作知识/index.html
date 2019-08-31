@@ -43,7 +43,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -202,9 +202,34 @@
     <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+      </li>
+    
   </ul>
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Searching..." spellcheck="false" type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -284,7 +309,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><strong>变量历史</strong><br>who 显示所使用的所有命令<br>whos 显示所有命令的主要信息，包括内存等。<br>clear 删除存储器中的变量。<br>长任务可以通过使用省略号(…)扩展到另一行。<br><strong>格式命令</strong><br>默认情况下，MATLAB显示的是短格式即是保存四位小数。但是，如果要更精确，则需要使用format命令。<br>format long命令显示十进制后的16位数字。<br>format bank命令将数字舍入到小数点后两位。<br>format short e命令以指数形式显示四位小数加上指数。<br>format long e命令允许以指数形式显示十六位小数加上指数。<br>format rat命令给出计算结果最接近的合理表达式。<br><strong>创建向量</strong><br><strong>行向量</strong>使用的是方括号元素集合的形式创建，用空格或者逗号分隔元素。<br><strong>列向量</strong>使用的是方括号元素集合的形式创建，用分号分隔元素。<br><strong>创建矩阵</strong><br>矩阵中每一行元素用逗号分隔，列与列之间用分号分隔元素。例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">m = [1 2 3;4 5 6;7 8 9];</span><br></pre></td></tr></table></figure></p>
+        <p><strong>变量历史</strong><br>who 显示所使用的所有命令<br>whos 显示所有命令的主要信息，包括内存等。<br>clear 删除存储器中的变量。<br>长任务可以通过使用省略号(…)扩展到另一行。<br><strong>格式命令</strong><br>默认情况下，MATLAB显示的是短格式即是保存四位小数。但是，如果要更精确，则需要使用format命令。<br>format long命令显示十进制后的16位数字。<br>format bank命令将数字舍入到小数点后两位。<br>format short e命令以指数形式显示四位小数加上指数。<br>format long e命令允许以指数形式显示十六位小数加上指数。<br>format rat命令给出计算结果最接近的合理表达式。<br><strong>创建向量</strong><br><strong>行向量</strong>使用的是方括号元素集合的形式创建，用空格或者逗号分隔元素。<br><strong>列向量</strong>使用的是方括号元素集合的形式创建，用分号分隔元素。<br><strong>创建矩阵</strong><br>矩阵中每一行元素用逗号分隔，列与列之间用分号分隔元素。例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">m = [1 2 3;4 5 6;7 8 9];</span><br></pre></td></tr></table></figure></p><a id="more"></a>
 <p><strong>matlab命令</strong></p>
 <ul>
 <li>数组及向量的命令</li>
@@ -429,7 +454,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -483,14 +508,14 @@
 
     
   
-  <script color="0,0,0" opacity="0.5" zindex="-1" count="150" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script color="0,0,12" opacity="0.5" zindex="-1" count="150" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   <script src="/lib/anime.min.js?v=3.1.0"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
 <script src="/js/schemes/pisces.js?v=7.3.0"></script>
 
-<script src="/js/next-boot.js?v=7.3.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/next-boot.js?v=7.3.0"></script>
 
 
 
@@ -502,6 +527,8 @@
 
 
 
+
+  <script src="/js/local-search.js?v=7.3.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 

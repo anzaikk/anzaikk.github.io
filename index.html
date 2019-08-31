@@ -43,7 +43,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -201,9 +201,34 @@
     <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+      </li>
+    
   </ul>
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Searching..." spellcheck="false" type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -222,6 +247,95 @@
           <div id="content" class="content">
             
   <div id="posts" class="posts-expand">
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/30/hexo-next主题下数学公式渲染不出问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="anzaikk">
+      <meta itemprop="description" content="you got to put the past behind you before you can move on">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="anzaikk">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/08/30/hexo-next主题下数学公式渲染不出问题/" class="post-title-link" itemprop="url">hexo--next主题下数学公式渲染不出问题</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-08-30 23:52:03" itemprop="dateCreated datePublished" datetime="2019-08-30T23:52:03+08:00">2019-08-30</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-31 00:23:46" itemprop="dateModified" datetime="2019-08-31T00:23:46+08:00">2019-08-31</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在hexo搭建的博客上用markdown写文章时，一般会碰到数学公式，但是hexo默认情况下渲染数学公式会出现各种各样的问题</p><h2 id="出现问题的原因"><a href="#出现问题的原因" class="headerlink" title="出现问题的原因"></a><strong>出现问题的原因</strong></h2><p>hexo默认使用的是hexo-renderer-marked引擎来渲染网页，这个引擎会将markdown符号转化为相应的html标签。比如下划线_转化为<em>标签，所以mathjax引擎渲染数学公式的时候会出错</em></p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/30/hexo-next主题下数学公式渲染不出问题/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
         <article itemscope itemtype="http://schema.org/Article">
   
   
@@ -275,17 +389,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>在ubuntu下利用命令行”latexmk -xelatex+文件名”latex源文件的时候有时候会出现错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fontspec error :&quot;font-not-found&quot;</span><br></pre></td></tr></table></figure></p>
-<p>这是因为系统中没有安装楷体<br>解决的方法是：</p>
-<ol>
+          <p>在ubuntu下利用命令行”latexmk -xelatex+文件名”latex源文件的时候有时候会出现错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fontspec error :&quot;font-not-found&quot;</span><br></pre></td></tr></table></figure></p><p>这是因为系统中没有安装楷体<br>解决的方法是：</p><ol>
 <li>准备字体<br>从windows系统中拷贝出字体，一般字体的目录是c:\windows\fonts</li>
 <li>将拷贝出来的字体放在ubuntu的目录\usr\share\fonts中</li>
 <li>导出字体<br>在终端中数学以下命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mkfontscale</span><br><span class="line">sudo mkfontdir</span><br><span class="line">sudo fc-cache -fv</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>命令执行成功后终端会显示fc-cache:succeeded</p>
-<p>当然这里也可以在网上下载楷体然后安装。</p>
-
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/23/font-not-found”/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -858,72 +976,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>线性规划只能解决一组线性约束条件下,某一目标只能是一个目标的最大或最小值的问题。但是实际决策中,衡量方案优劣要考虑多个目标。所以需要目标规划模型，模型中的这些目标中,有主要的,也有次要的;有最大值的,也有最小值的;有定量的,也有定性的;有相互补充的。</p>
-<h3 id="1-目标函数的求解思路"><a href="#1-目标函数的求解思路" class="headerlink" title="1. 目标函数的求解思路"></a>1. 目标函数的求解思路</h3><ul>
+          <p>线性规划只能解决一组线性约束条件下,某一目标只能是一个目标的最大或最小值的问题。但是实际决策中,衡量方案优劣要考虑多个目标。所以需要目标规划模型，模型中的这些目标中,有主要的,也有次要的;有最大值的,也有最小值的;有定量的,也有定性的;有相互补充的。</p><h3 id="1-目标函数的求解思路"><a href="#1-目标函数的求解思路" class="headerlink" title="1. 目标函数的求解思路"></a>1. 目标函数的求解思路</h3><ul>
 <li><strong>加权系数法</strong><br>为每一目标赋一个权系数,把多目标模型转化成单一目标的模型。但困难是要确定合理的权系数,以反映不同目标之间的重要程度。</li>
 <li><strong>优先等级法</strong><br>将各目标按其重要程度不同的优先等级,转化为单目标模型。</li>
 <li><strong>有效解法</strong><br>寻求能够照顾到各个目标,并使决策者感到满意的解。由决策者来确定选取哪一个解,即得到一个满意解。但有效解的数目太多而难以将其一一求出。</li>
 </ul>
-<h3 id="2-目标规划的数学模型"><a href="#2-目标规划的数学模型" class="headerlink" title="2. 目标规划的数学模型"></a>2. 目标规划的数学模型</h3><p>为了具体说明目标规划与线性规划在处理问题的方法上的区别,先通过例子来介绍目标规划的有关概念及数学模型。<br>某工厂生产 I,II 两种产品,已知有关数据见下表:</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th></th>
-<th>I</th>
-<th>II</th>
-<th>拥有量</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>原料</td>
-<td>2</td>
-<td>1</td>
-<td>11</td>
-</tr>
-<tr>
-<td>设备</td>
-<td>1</td>
-<td>2</td>
-<td>10</td>
-</tr>
-<tr>
-<td>利润</td>
-<td>8</td>
-<td>10</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>是求获利最大的生产方案<br>这道题的数学模型是，设生产 I,II 产品分别为<script type="math/tex">x_1,x_2</script>则：</p>
-<script type="math/tex; mode=display">（目标函数）max z = 8x_1 + 10x_2\\
-（约束条件）s.t.
-\begin{cases}
-2x_1 + x_2 < 11\\
-x_1 + 2x_2 < 10\\
-x_1,x_2 > 0
-\end{cases}</script><p>最优决策方案为: <script type="math/tex">x_{1}^*= 4 , x_{2}^* = 3 , z = 62</script>元。<br>但实际上工厂在作决策方案时,要考虑市场等一系列其它条件。如</p>
-<ol>
-<li>根据市场信息,产品 I 的销售量有下降的趋势,故考虑产品 I 的产量不大于产品 II。</li>
-<li>超过计划供应的原材料,需要高价采购,这就使成本增加。</li>
-<li>应尽可能充分利用设备,但不希望加班。</li>
-<li>应尽可能达到并超过计划利润指标 56 元。</li>
-</ol>
-<p>有了这一系列的条件之后，简单的线性规划不足以解决这样的问题，所以要用目标规划这种数学模型。<br><strong>下面引入与建立目标规划数学模型有关的概念。</strong></p>
-<ol>
-<li><strong>正，负偏差变量</strong><br>设 d 为决策变量的函数,正偏差变量<script type="math/tex">d^+ = max{d, d^0, 0}</script>表示决策值超过目标值的部分,负偏差变量<script type="math/tex">d^- =max{d, d^0, 0}</script>表示决策值未达到目标值的部分,这里<script type="math/tex">d^0</script>表示d的目标值。其中<script type="math/tex">d^+,d^-</script>是同类型的数，因决策值不可能既超过目标值同时又未达到目标值,即恒有<script type="math/tex">d^+ * d^- = 0</script>。</li>
-<li><strong>绝对(刚性)约束和目标约束</strong><br>绝对约束是指必须严格满足的等式约束和不等式约束;如线性规划问题的所有约束条件,不能满足这些约束条件的解称为非可行解,所以它们是硬约束。<br>目标约束是目标规划特有的,可把约束右端项看作要追求的目标值。在达到此目标值时允许发生正或负偏差,因此在这些约束中加入正、负偏差变量,它们是软约束。</li>
-<li><strong>优先因子(优先等级)与权系数</strong><br>一个规划问题常常有若干目标。但决策者在要求达到这些目标时,是有主次或轻重缓急的不同。凡要求第一位达到的目标赋于优先因子<script type="math/tex">P_1</script>，其他的以此类推，例如：<script type="math/tex">P_k</script>比<script type="math/tex">P_{k+1}</script>的优先级高。赋于它们不同的权系数<script type="math/tex">w_j</script>，区别具有相同优先因子的两个目标的区别。</li>
-<li><strong>目标规划的目标函数</strong><br>目标规划的目标函数(准则函数)是按各目标约束的正、负偏差变量和赋于相应的优先因子而构造的。主要有三种形式。</li>
-</ol>
-<ul>
-<li>要求恰好达到目标值,即正、负偏差变量都要尽可能地小,这时<script type="math/tex; mode=display">min z = f ( d^+ + d^− )</script></li>
-<li>要求不超过目标值,即允许达不到目标值,就是正偏差变量要尽可能地小,这时<script type="math/tex; mode=display">minz = f(d^+)</script></li>
-<li>要求超过目标值,即超过量不限,但必须是负偏差变量要尽可能地小,这时<script type="math/tex; mode=display">min z = f ( d^− )</script>对每一个具体目标规划问题,可根据决策者的要求和赋于各目标的优先因子来构造目标函数。</li>
-</ul>
-
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/12/目标规划/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1003,99 +1069,16 @@ x_1,x_2 > 0
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>动态规划是求解某类问题的一种方法,是考察问题的一种途径,而不是一种特殊算法(如线性规划是一种算法)。它不像线性规划那样有一个标准的数学表达式和明确定义的一组规则,而必须对具体问题进行具体分析处<br>理。</p>
-<h3 id="1-决策过程的分类"><a href="#1-决策过程的分类" class="headerlink" title="1. 决策过程的分类"></a>1. 决策过程的分类</h3><p>根据过程的时间变量是离散的还是连续的,分为离散时间决策过程和连续时间决策过程。<br>根据过程演变是确定的还是随机的,分为确定性决策过程和随机性决策过程。<br>其中应用最广的是确定性多阶段决策过程。</p>
-<h3 id="2-基本概念、基本方程和计算方法"><a href="#2-基本概念、基本方程和计算方法" class="headerlink" title="2. 基本概念、基本方程和计算方法"></a>2. 基本概念、基本方程和计算方法</h3><p>一个多阶段决策过程最优化问题的动态规划模型通常包含阶段，状态，决策，策略这几个要素。<br><strong>阶段</strong>表示的是对整个过程的自然划分。通常根据时间顺序或空间顺序特征来划分阶段,以便按阶段的次序解优化问题。阶段变量一般用 k = 1 , 2 , L , n 表示。<br><strong>状态</strong>表示的是每个阶段开始时过程所处的自然状况。描述状态的变量称状态变量。变量允许取值的范围称允许状态集合。用<script type="math/tex">x_k</script>表示第 k 阶段的状态变量,它可以是一个数或一个向量。用<script type="math/tex">X_k</script>表示第 k 阶段的允许状态集合。<br><strong>决策</strong>表示的是当一个阶段的状态确定后,可以作出各种选择从而演变到下一阶段的某个状态。描述决策的变量称决策变量，变量允许取值的范围称允许决策集合。在最优控制问题中也称为控制。用<script type="math/tex">u_k (x_k)</script>表示第 k 阶段处于状态<script type="math/tex">x_k</script>时的决策变量,用<script type="math/tex">U_k(x_k)</script>表示<script type="math/tex">x_k</script>的允许决策集合。<br><strong>策略</strong>表示的是决策组成的序列。由初始状态<script type="math/tex">x_1</script>开始的全过程的策略记作<script type="math/tex">p_{1n}(x1)</script>由第 k 阶段的状态<script type="math/tex">x_k</script>开始到终止状态的后部子过程的策略记作<script type="math/tex">p_{kn}(x_k)</script>。<br><strong>状态转移方程</strong>表示的是在确定性过程中,一旦某阶段的状态和决策为已知,下阶段的状态便完全确定。写作：</p>
-<script type="math/tex; mode=display">X_{k+1} = T_{k}(u_k, x_k) k = 1,2,3,...n</script><p><strong>指标函数</strong>表示的是衡量过程优劣的数量指标,它是定义在全过程和所有后部子过程上的数量函数,用 <script type="math/tex">V_{kn}( x_k , u_k , x_k + 1 , L , x_n + 1 )</script> 表示,<script type="math/tex">k = 1 , 2 , L , n</script>。</p>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/10/二次曲线理论/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="anzaikk">
-      <meta itemprop="description" content="you got to put the past behind you before you can move on">
-      <meta itemprop="image" content="/images/touxiang.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="anzaikk">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/08/10/二次曲线理论/" class="post-title-link" itemprop="url">小行星问题的二次曲线理论(椭圆部分)</a>
+          <p>动态规划是求解某类问题的一种方法,是考察问题的一种途径,而不是一种特殊算法(如线性规划是一种算法)。它不像线性规划那样有一个标准的数学表达式和明确定义的一组规则,而必须对具体问题进行具体分析处<br>理。</p><h3 id="1-决策过程的分类"><a href="#1-决策过程的分类" class="headerlink" title="1. 决策过程的分类"></a>1. 决策过程的分类</h3><p>根据过程的时间变量是离散的还是连续的,分为离散时间决策过程和连续时间决策过程。<br>根据过程演变是确定的还是随机的,分为确定性决策过程和随机性决策过程。<br>其中应用最广的是确定性多阶段决策过程。</p>
+          <!--noindex-->
           
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-08-10 14:31:46" itemprop="dateCreated datePublished" datetime="2019-08-10T14:31:46+08:00">2019-08-10</time>
-            </span>
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/10/动态规划/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-30 23:08:28" itemprop="dateModified" datetime="2019-08-30T23:08:28+08:00">2019-08-30</time>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>小行星轨道问题中，关于二次曲线理论的公式：</p>
-<script type="math/tex; mode=display">
-椭圆的一般方程：a_1x^2 + 2a_2xy + a_3y^2 + 2a_4x + 2a_5y + 1 = 0\\
-椭圆的标准方程：\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1</script><p>椭圆经过旋转和平移变换后的公式是：</p>
-<script type="math/tex; mode=display">
-\lambda_1 X^2 + \lambda_2 Y^2 + |\frac{D}{C}| = 0\\
-C = \begin{bmatrix}a_1&a_2\\a_2&a_3\end{bmatrix}\quad
-D =\begin{bmatrix}a_1&a_2&a_3\\a_2&a_3&a_5\\a_4&a_5&1\end{bmatrix}</script><p>其中<script type="math/tex">\lambda_1，\lambda_2</script>是C矩阵的特征值<br>所以椭圆的长半轴的平方为：<script type="math/tex">a^2 = |\frac{|D|}{\lambda_1 |C|}|</script><br>椭圆的短半轴长的平方为：<script type="math/tex">b^2 = |\frac{|D|}{\lambda_2|C|}|</script><br>椭圆的半焦距的平方为：<script type="math/tex">c^2 = \sqrt{a^2 + b^2}</script><br>椭圆的离心率为：<script type="math/tex">e = \frac{c}{a}</script><br>椭圆的面积为：<script type="math/tex">S = pi ab</script><br><a href="https://wenku.baidu.com/view/d968a48a9ec3d5bbfd0a74bc.html" title="二次曲线理论" target="_blank" rel="noopener">本文参考</a></p>
-
+          <!--/noindex-->
         
       
     </div>
@@ -1164,7 +1147,7 @@ D =\begin{bmatrix}a_1&a_2&a_3\\a_2&a_3&a_5\\a_4&a_5&1\end{bmatrix}</script><p>�
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1218,7 +1201,7 @@ D =\begin{bmatrix}a_1&a_2&a_3\\a_2&a_3&a_5\\a_4&a_5&1\end{bmatrix}</script><p>�
 
     
   
-  <script color="0,0,0" opacity="0.5" zindex="-1" count="150" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script color="0,0,12" opacity="0.5" zindex="-1" count="150" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   <script src="/lib/anime.min.js?v=3.1.0"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
@@ -1238,6 +1221,8 @@ D =\begin{bmatrix}a_1&a_2&a_3\\a_2&a_3&a_5\\a_4&a_5&1\end{bmatrix}</script><p>�
 
 
 
+  <script src="/js/local-search.js?v=7.3.0"></script>
+
 
 
 
@@ -1254,13 +1239,13 @@ D =\begin{bmatrix}a_1&a_2&a_3\\a_2&a_3&a_5\\a_4&a_5&1\end{bmatrix}</script><p>�
   
 
   
+    
+      
     
       
     
       
         
-      
-    
       
     
       

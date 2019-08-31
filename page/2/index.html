@@ -43,7 +43,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -201,9 +201,34 @@
     <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+      </li>
+    
   </ul>
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Searching..." spellcheck="false" type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -222,6 +247,100 @@
           <div id="content" class="content">
             
   <div id="posts" class="posts-expand">
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/10/二次曲线理论/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="anzaikk">
+      <meta itemprop="description" content="you got to put the past behind you before you can move on">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="anzaikk">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/08/10/二次曲线理论/" class="post-title-link" itemprop="url">小行星问题的二次曲线理论(椭圆部分)</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-08-10 14:31:46" itemprop="dateCreated datePublished" datetime="2019-08-10T14:31:46+08:00">2019-08-10</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-30 23:08:28" itemprop="dateModified" datetime="2019-08-30T23:08:28+08:00">2019-08-30</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>小行星轨道问题中，关于二次曲线理论的公式：</p><script type="math/tex; mode=display">
+椭圆的一般方程：a_1x^2 + 2a_2xy + a_3y^2 + 2a_4x + 2a_5y + 1 = 0\\
+椭圆的标准方程：\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1</script><p>椭圆经过旋转和平移变换后的公式是：</p><script type="math/tex; mode=display">
+\lambda_1 X^2 + \lambda_2 Y^2 + |\frac{D}{C}| = 0\\
+C = \begin{bmatrix}a_1&a_2\\a_2&a_3\end{bmatrix}\quad
+D =\begin{bmatrix}a_1&a_2&a_3\\a_2&a_3&a_5\\a_4&a_5&1\end{bmatrix}</script>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/10/二次曲线理论/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
         <article itemscope itemtype="http://schema.org/Article">
   
   
@@ -283,116 +402,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="一、matlab绘图"><a href="#一、matlab绘图" class="headerlink" title="一、matlab绘图"></a>一、matlab绘图</h2><p>强大的绘图功能是matlab的特点之一，matlab提供一系列的绘图函数，用户可以不用过多的考虑绘图的细节，<br>只需要一些简单的绘图参数就能够完成绘图。<br><strong>利用plot函数来绘制图形</strong><br>用plot函数来绘制图形主要有以下三步：</p>
-<ol>
+          <h2 id="一、matlab绘图"><a href="#一、matlab绘图" class="headerlink" title="一、matlab绘图"></a>一、matlab绘图</h2><p>强大的绘图功能是matlab的特点之一，matlab提供一系列的绘图函数，用户可以不用过多的考虑绘图的细节，<br>只需要一些简单的绘图参数就能够完成绘图。<br><strong>利用plot函数来绘制图形</strong><br>用plot函数来绘制图形主要有以下三步：</p><ol>
 <li>通过指定要绘制函数的变量x的值的范围来定义x</li>
 <li>定义函数y = f(x)</li>
 <li>调用plot函数命令<br><strong>在图上添加标题，标签，网格线和缩放</strong></li>
 </ol>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>描述说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>xlabel,ylabel</td>
-<td>沿着x轴和y轴生成标签</td>
-</tr>
-<tr>
-<td>title</td>
-<td>设置图的总标题</td>
-</tr>
-<tr>
-<td>grid on</td>
-<td>生成网格线</td>
-</tr>
-<tr>
-<td>axis equal</td>
-<td>允许生成具有相同比例因子的绘图和两个轴上的空格。</td>
-</tr>
-<tr>
-<td>axis square</td>
-<td>命令生成一个方形图</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>在同一个图上绘制多个函数</strong><br>通过在函数plot传入多个函数对应的参数实现，例如plot(x,y,x,g)。<br><strong>在图上设置颜色</strong><br>MATLAB提供了八个基本的颜色选项来绘制图形。 下表显示了颜色及其代码</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>代码</th>
-<th>描述说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>r</td>
-<td>红色</td>
-</tr>
-<tr>
-<td>y</td>
-<td>黄色</td>
-</tr>
-<tr>
-<td>g</td>
-<td>绿色</td>
-</tr>
-<tr>
-<td>b</td>
-<td>蓝色</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>设置刻度轴</strong><br>axis命令用来设置轴刻度。可以通过以下方式使用axis命令为x和y轴提供最小和最大值。<br><strong>绘制条形图</strong><br>bar命令绘制二维条形图，基本的参数和plot函数差不多<br><strong>绘制等高线</strong><br>两个函数的变量的轮廓线是曲线，matlab提供了contour函数来绘制图形。具体的步骤是</p>
-<ol>
-<li>通过meshgrid来生成两个独立的变量x,y。例：[x,y] = meshgrid(1:0.1:2,1:0.2:4)</li>
-<li>定义函数g = f(x,y)</li>
-<li>调用函数contour(x,y,g)</li>
-</ol>
-<p>其他的关于标签的内容和plot函数的用法一样，同时为了时代的图上有标识可以调用set函数<br><strong>三维图</strong><br>matlab中绘制三维图也是分为三步，前两步和绘制轮廓图的过程是一样的，第三步则是调用surf函数，这个函数的用法和contour的<br>用法是一样的的。同时也可以调用mesh函数进行绘制三维图</p>
-<h2 id="二、matlab代数-方程求解"><a href="#二、matlab代数-方程求解" class="headerlink" title="二、matlab代数(方程求解)"></a>二、matlab代数(方程求解)</h2><p><strong>在MATLAB中求解基本代数方程</strong><br>solve函数用于求解代数方程。在其最简单的形式中，solve函数将引用中的方程式作为参数。例子：solve(‘x - 21 = 0’)该方法适用于方程组，二次方程，高阶方程。若涉及多个变量，则要转入第二个参数。例子:solve(‘u - v + 2 = 0’, ‘v’)。</p>
-<p>第二种方法是调用roots函数，该函数传入的参数是方程的系数，该函数也是适用于方程组，二次方程，高阶方程等。例子：要求 2x -3y =0,即是调用root([2, -3])</p>
-<h2 id="三、matlab微积分"><a href="#三、matlab微积分" class="headerlink" title="三、matlab微积分"></a>三、matlab微积分</h2><p>MATLAB提供了解决微分和积分微积分的各种方法，求解任何程度的微分方程和极限计算。可以轻松绘制复杂功能的图形，并通过求解原始功能以及其衍生来检查图形上的最大值，最小值和其他固定点。<br><strong>计算极限</strong><br>MATLAB提供计算极限的limit函数。最基本的用法是将表达式作为参数，并在独立变量为零时找到表达式的极限。limit函数落在符号计算域; 需要使用syms函数来告诉MATLAB正在使用的符号变量。例子：要计算(x^2+6)/(x^3+4)的极限,要这样输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sysm x</span><br><span class="line">limit((x^2+6)/(x^3+4))</span><br></pre></td></tr></table></figure></p>
-<p>limit函数还可以计算函数的极限，因为变量趋向于除零之外的某个数字，即是在表达式这个参数后面，输入要变量要趋进的数。例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sysm x</span><br><span class="line">limit((x^2+6)/(x^3+9), 3)</span><br></pre></td></tr></table></figure></p>
-<p>limit可以通过将字符串“left”和“right”作为最后一个参数传递给limit命令来计算左侧和右侧的极限。</p>
-<h2 id="四、matlab微分和导数"><a href="#四、matlab微分和导数" class="headerlink" title="四、matlab微分和导数"></a>四、matlab微分和导数</h2><p>matlab提供用于计算符号导数的diff命令。 以最简单的形式，将要微分的功能传递给diff命令作为参数。例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">syms t</span><br><span class="line">m = 2t^2+3t+6</span><br><span class="line">diff(m)</span><br></pre></td></tr></table></figure></p>
-<p>要计算高阶导数，即是在diff函数后面多加所求导数的结束即可<br><strong>计算曲线的最大值和最小值</strong><br>要计算曲线的最大最小值，就是通过对曲线所对应的函数进行求导，并令其等于零时，得到的解的函数值。对于函数<script type="math/tex">y = f(x)</script>，图形具有零斜率的图上的点称为固定点。 换句话说，固定点是<script type="math/tex">f'(x)= 0</script>要找到微分的函数的固定点，需要将导数设置为零并求解方程。<br><strong>求解微分方程</strong><br>matlab提供dslove函数来求解微分方程，其中slove函数的最基本的用法是dsolve(‘eqn’),eqn指的是文本内容，即是要求微分方程的文本形式，具体来说是eqn就是微分方程加上单引号。<br>对于高阶的微分方程，采用的是D导数的顺序表示。例子：要求<script type="math/tex">y''+ 2y' + y + 2x + 1 = 0</script>,matlab的命令为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dsolve(&apos;D2y +  2*Dy + y +2*x +1 = 0&apos;)</span><br></pre></td></tr></table></figure></p>
-<h2 id="五、matlab整合集成"><a href="#五、matlab整合集成" class="headerlink" title="五、matlab整合集成"></a>五、matlab整合集成</h2><ol>
-<li>不定积分<br>matlab中使用int函数求出函数的不定积分，这个函数的参数直接就是要求不定积分的方程</li>
-<li>定积分<br>使用int函数求积分，传入下上限作为int的第二和第三个参数。</li>
-</ol>
-<h2 id="六、matlab转换"><a href="#六、matlab转换" class="headerlink" title="六、matlab转换"></a>六、matlab转换</h2><p>matlab提供了处理转换的命令，如拉普拉斯和傅里叶变换。转换在科学和工程中被用作简化分析和从另一个角度看待数据的工具。MATLAB提供了laplace，fourier和fft命令来处理拉普拉斯，傅立叶和快速傅里叶转换。<br>拉普拉斯变换采用的是laplace函数,其逆变换采用的是ilaplace。<br>傅立叶变换采用的是fourier函数，其逆变换采用的是ifourier。</p>
-<h2 id="七、matlab向量"><a href="#七、matlab向量" class="headerlink" title="七、matlab向量"></a>七、matlab向量</h2><ol>
-<li>matlab中向量的加减法和标量的乘法都比较简单，不作详细的记录。</li>
-<li>MATLAB中转置操作使用一个单引号（’）来表示。</li>
-<li>MATLAB 允许在原有的向量中附加向量，共同创造新的向量，若是将两个向量用逗号或者空格隔开，即是增加向量的行数，若是将两个向量用分号隔开，即是增加向量的列数。</li>
-</ol>
-<h2 id="八、matlab矩阵"><a href="#八、matlab矩阵" class="headerlink" title="八、matlab矩阵"></a>八、matlab矩阵</h2><p>创建a矩阵<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = [1 2 3;4 5 6;7 8 9]</span><br></pre></td></tr></table></figure></p>
-<ol>
-<li><p>要转置矩阵，使用一个单引号(‘)，例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a&apos;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用*运算执行标准矩阵乘法，这是计算行与列之间的内积。inv函数作用是求矩阵的逆，例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p = a*inv(a)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>matlab将数字的储存的方式是浮点值，可以使用format命令改变显示内容的格式。例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">format long</span><br><span class="line">p = a*inv(a)</span><br><span class="line">format short</span><br><span class="line">p = a*a</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>要执行元素级（而非矩阵乘法），使用的是.*运算符。若是矩阵的多次方，则使用.^例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p = a.*a</span><br><span class="line">p = a.^3</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="九、杂七杂八"><a href="#九、杂七杂八" class="headerlink" title="九、杂七杂八"></a>九、杂七杂八</h2><ol>
-<li>将excel的数据导入matlab中<br>在使用MATLAB对矩阵进行数据处理时，为了方便编辑与修改，常常需要先将数据录入到Excel中，然后再将其导入到MATLAB中参与矩阵运算。<br>最后是<a href="https://www.yiibai.com/matlab" title="教程" target="_blank" rel="noopener">matlab教程来源</a></li>
-</ol>
-
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/09/matlab进阶/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -472,8 +495,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>线性规划问题是在一组线性约束条件限制下，求一线性目标函数的最大值或者最小值的问题。</p>
-<ul>
+          <p>线性规划问题是在一组线性约束条件限制下，求一线性目标函数的最大值或者最小值的问题。</p><ul>
 <li>例子：<br>某机床厂生产甲、乙两种机床,每台销售后的利润分别为 4000 元与 3000 元。生产甲机床需用 A、 B 机器加工,加工时间分别为每台 2 小时和 1 小时;生产乙机床需用 A 、 B 、 C 三种机器加工,加工时间为每台各一小时。若每天可用于加工的机器时数分别为 A 机器 10 小时、 B 机器 8 小时和 C 机器 7 小时,问该厂应生产甲、乙机床各几台,才能使总利润最大?<br>&ensp;这个问题的数学模型为：设该厂生产甲机床<script type="math/tex">x_1</script>,生产乙机床<script type="math/tex">x_2</script>,则<script type="math/tex">x_1,x_2</script>应该满足：<script type="math/tex; mode=display">(目标函数)max:z = 4x_1 + 3x_2\tag{1}\\s.t.(约束条件)
 \begin{cases}
 2x_1+x_2<10\\
@@ -482,34 +504,15 @@ x_2<7\\
 x_1,x_2>0
 \end{cases}</script>上面的式子中，<script type="math/tex">x_1,x_2</script>是决策变量，上面的式子1是目标函数，下面的公式组是约束条件，由于目标函数和约束条件都是线性函数。故为线性规划问题。</li>
 </ul>
-<ol>
-<li>线性规划matlab的标准形式<br>为了避免形式多样化带来的不便，matlab中规定线性规划的标准形式如下：<script type="math/tex; mode=display">
-(目标函数)minc^Tx\\
-s.t.(约束条件)
-\begin{cases}
-Ax <= b\\
-Aeqx = beq\\
-lb < x < ub
-\end{cases}</script>其中c,x为单位列向量。A，Aeq为适当维度的矩阵。b,beq为适当维度的列向量。<br>例子：<script type="math/tex; mode=display">
-(目标函数)maxc^Tx\\
-s.t.(约束条件)
-\begin{cases}
-Ax <=b\\
-Aeqx = beq\\
-lb < x < ub
-\end{cases}</script>该例子的matlab的标准形式为：<script type="math/tex; mode=display">
-(目标函数)min-c^Tx\\
-s.t.(约束条件)
-\begin{cases}
--Ax >= -b\\
-Aeqx = beq\\
-lb < x < ub
-\end{cases}</script></li>
-<li>线性规划问题的解<br>满足约束条件的解x叫做<strong>可行解</strong>，而使得目标函数达到最大值或者最小值的解叫做<strong>最优解</strong>。所有可行解的集合叫做<strong>可行域</strong>。</li>
-<li>线性规划问题的图形解法<br>在文章的开头的那一道例子中，应用图解法</li>
-</ol>
-<p>4.线性规划问题的matlab解法</p>
-
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/07/线性规划/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -756,108 +759,15 @@ lb < x < ub
 
       
           <h1 id="一、latex的简洁介绍"><a href="#一、latex的简洁介绍" class="headerlink" title="一、latex的简洁介绍"></a>一、latex的简洁介绍</h1><p>流行的TeX的版本，比如CTeX和TeXlive,都有自带的编辑器。国内用的比较多的是CTeX,而其自带的编辑器是TeXworks。<br>TeX的排版工具主要有pdfTeX, pdfLaTeX,XeLaTeX等，其中CTex自带的排版工具是pdfLaTeX。关于中文显示的问题，<br>XeTeX原生支持Unicode，很好的解决了中文显示的内容。使用ctex宏包能够一次性的解决所有的中文显示的问题主要的<br>代码为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">你好,world.</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
-<p>其中以反斜杠\开头，以空格或者非字符结束的一段文字，就是控制序列，如上面的\documentclass。控制序列并不会直接<br>输出，但是会形象文本的输出效果。代码中{ctexart}代表的是控制序列的必要参数。</p>
-<h1 id="二、作者，日期，标题"><a href="#二、作者，日期，标题" class="headerlink" title="二、作者，日期，标题"></a>二、作者，日期，标题</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line">\title&#123;anzaikk&#125;</span><br><span class="line">\author&#123;anzaikk&#125;</span><br><span class="line">\data&#123;\today&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">maketitle</span><br><span class="line">你好，world.</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<p>代码中紧跟控制序列\documentclass后面的[UTF8]表示的是可选参数，可以增强显示功能。控制序列\maketitle，<br>作用是可以让作者，日期，标题按照预定的效果展示出来。</p>
-<h1 id="三、章节和段落"><a href="#三、章节和段落" class="headerlink" title="三、章节和段落"></a>三、章节和段落</h1><p>在ctexart\article中定义了五大控制序列来调整文章的行文，分别是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\section&#123;.&#125;</span><br><span class="line">\subsection&#123;.&#125;</span><br><span class="line">\subsubsection&#123;.&#125;</span><br><span class="line">\paragraph&#123;.&#125;</span><br><span class="line">\subparagraph&#123;.&#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>例子<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line">\title&#123;例子&#125;</span><br><span class="line">\author&#123;anzaikk&#125;</span><br><span class="line">\data&#123;\today&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\section&#123;世界&#125;</span><br><span class="line">世界是团结有爱的</span><br><span class="line">\subsection&#123;中国&#125;</span><br><span class="line">中国是团结有爱的</span><br><span class="line">\subsubsection&#123;广东&#125;</span><br><span class="line">广东是团结友爱的</span><br><span class="line">\paragraph&#123;茂名&#125;</span><br><span class="line">是团结有爱的</span><br><span class="line">\subparagraph&#123;信宜&#125;</span><br><span class="line">是团结有爱的</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="四、插入目录"><a href="#四、插入目录" class="headerlink" title="四、插入目录"></a>四、插入目录</h1><p>在控制序列\maketitle下面或者上面插入控制序列\tableofcontents,再编译两次就能够插入目录</p>
-<h1 id="五、数学模式"><a href="#五、数学模式" class="headerlink" title="五、数学模式"></a>五、数学模式</h1><ol>
-<li><p><strong>插入数学公式</strong><br>编写数学公式，使用的是AMS-LaTeX提供的数学模式的功能，首先要在引言区加入amsmath宏包。代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;amsmath&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>数学模式</strong><br>LaTeX的数学模式有两种，一种是行间模式，一种是行内模式。具体实现是行内模式$—-$,行间模式具体<br>\[—-\],使用equation环境begin{equation}。</p>
-</li>
-</ol>
-<ul>
-<li><p>上下标</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line">\usepackage&#123;amsmath&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">$E = mc^2$</span><br><span class="line">\[E = mc^2\]</span><br><span class="line">\begin&#123;eqation&#125;</span><br><span class="line">E = mc^2</span><br><span class="line">\end&#123;eqation&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>根式和分式<br>根式\sqrt{—}，分式\frac{-}{-}表示。例子</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line">\usepackage&#123;amsmath&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">frac&#123;sqrt&#123;2&#125;&#125;&#123;2&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>运算符<br>一些小的运算符可以直接在数学模式中输出，但是有一些要借助控制序列，如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\[ \pm\; \times \; \div\; \cdot\; \cap\; \cup\;</span><br><span class="line">\geq\; \leq\; \neq\; \approx \; \equiv \]</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>连乘，连加，积分，极限这些大型的运算符用控制序列\prod,\sum,\int,\lim表示，这些都是压缩行高的，<br>我们可以用\limits和\nolimits来强制显式地指定是否压缩这些上下标。<br>多重积分用\int,\iint,\iiint。</p>
-<ul>
-<li><p>矩阵<br>amsmath 的pmatrix, bmatrix, Bmatrix, vmatrix, Vmatrix 等环境可以在矩阵两边加上各种分隔符。<br>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\[\begin&#123;pmatrix&#125;a&amp;b\\c&amp;d\end&#123;pmatrix&#125;\]\quad</span><br><span class="line">\[\begin&#123;bmatrix&#125;a&amp;b\\c&amp;d\end&#123;bmatrix&#125;\]\quad</span><br><span class="line">\[\begin&#123;Bmatrix&#125;a&amp;b\\c&amp;d\end&#123;Bmatrix&#125;\]\quad</span><br><span class="line">\[\begin&#123;vmatrix&#125;a&amp;b\\c&amp;d\end&#123;vmatrix&#125;\]\quad</span><br><span class="line">\[\begin&#123;Vmatrix&#125;a&amp;b\\c&amp;d\end&#123;Vmatrix&#125;\]\quad</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>多行公式</p>
-<ul>
-<li><p>不对齐公式组</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\[\begin&#123;multline&#125;</span><br><span class="line">y = 2x +3\\</span><br><span class="line">y = 3x +1</span><br><span class="line">\end&#123;multline&#125;\]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>对齐公式组</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\[\begin&#123;aligned&#125;</span><br><span class="line">y = a + b + c\\</span><br><span class="line">y = 3a - 2b +c\\</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">\]</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>分段函数<br>分段函数可以用cases次环境来实现，它必须包含在数学环境之内。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\[ y=\ begin&#123;cases&#125;</span><br><span class="line">-x,\quad x\leq 0 \\</span><br><span class="line">x,\quad x&gt;0</span><br><span class="line">\end&#123;cases&#125; \]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>希腊字符</p>
-</li>
-</ul>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>希腊字符</th>
-<th>描述说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>\lambda</td>
-<td>\\lambda</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h1 id="六、插入表格与图片"><a href="#六、插入表格与图片" class="headerlink" title="六、插入表格与图片"></a>六、插入表格与图片</h1><ul>
-<li><p>插入图片<br>LaTeX中插入图片的方式有很多，其中可以用graphicx宏包提供的\includegraphics控制序列<br>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line">\usepackage&#123;graphicx&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\includegraphics[width = .8\texwidth]&#123;url&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>插入表格<br>tabular环境提供了最简单的表格功能。它用\hline命令表示横线，|表示竖线；用&amp;来分列，用\\来换行；每列可以采用居中、居左、居右等横向对齐方式，分别用l、c、r 来表示。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;tabular&#125;&#123;l|c|r&#125;</span><br><span class="line">\hline</span><br><span class="line">a&amp;b&amp;c\\</span><br><span class="line">\hline</span><br><span class="line">a&amp;b&amp;c\\</span><br><span class="line">\hline</span><br><span class="line">\end&#123;tabular&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="七、页边距"><a href="#七、页边距" class="headerlink" title="七、页边距"></a>七、页边距</h1><p>设置页边距使用的是宏包geometry。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;geometry&#125;</span><br><span class="line">\geometry&#123;papersize&#123;20cm,15cm&#125;&#125;</span><br><span class="line">\geometry&#123;left = 0.1,right = 0.2, top = 0.3, bottom = 0.5&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="八、首行缩进问题"><a href="#八、首行缩进问题" class="headerlink" title="八、首行缩进问题"></a>八、首行缩进问题</h1><p>为了解决首行缩进问题，我们可以在导言区调用\usepackage{indentfirst}。</p>
-<h1 id="九、杂七杂八"><a href="#九、杂七杂八" class="headerlink" title="九、杂七杂八"></a>九、杂七杂八</h1><ol>
-<li>分页：\newpage、\pagebreak </li>
-<li>字体：</li>
-</ol>
-<ul>
-<li>\rmfamily,\textrm{}一般使用在正文的罗马字体</li>
-<li>\sffamily一般使用在标题中,\texts{}</li>
-<li>\ttfamily等宽字体一般使用在代码中,\texttt{}</li>
-</ul>
-<ol>
-<li>对齐命令：\centering、\raggedleft、\raggedright</li>
-<li>空白间距：\hspace{2cm}、\vspace{2ex},第一个是水平间距，第二个是垂直间距。</li>
-<li>断行：\linebreak、\\\\</li>
-<li><p>参考文献：<br><strong>使用的是bibtex工具：</strong></p>
-<ol>
-<li>新建.bib文件，然后将引用的内容粘帖进去，并将它与主文件放在同一个文件夹中</li>
-<li><p>主文件夹中内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">先在文章的开头写进控制序列\bibliographystyle&#123;&#125; 花括号可以使用plain,alpha,abbrv,amsplain,elsarticle-num</span><br><span class="line">\cite&#123;&#125;括号的内容是所复制的内容的开头的括号的内容</span><br><span class="line">\bibliography&#123;&#125; 括号填写的内容是.bib的名称</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>完整的命令行的编译的方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">xelatex 名称</span><br><span class="line">bibtex 名称</span><br><span class="line">xelatex 名称</span><br><span class="line">xelatex 名称</span><br><span class="line">或者使用latexmk一个指令完成</span><br><span class="line">latexmk -xelatex 名称</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-</ol>
-<p><strong>使用gbt7714宏包</strong><br>gbt7714宏包符合GB\T7714-2015的中国参考文献的推荐标准，有super,numbers,authoryear三个选项。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\usepackage[numbers]&#123;gbt7714&#125;</span><br><span class="line">\cite&#123;&#125;</span><br><span class="line">\bibliography&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>7.tex说明文档<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">texdoc 宏包</span><br><span class="line">latex学习文档</span><br><span class="line">texdoc</span><br></pre></td></tr></table></figure></p>
-<h1 id="本文参考"><a href="#本文参考" class="headerlink" title="本文参考"></a><a href="https://www.latexstudio.net/archives/2323.html" target="_blank" rel="noopener">本文参考</a></h1>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/05/latex基本知识/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -938,61 +848,15 @@ lb < x < ub
 
       
           <p><strong>变量历史</strong><br>who 显示所使用的所有命令<br>whos 显示所有命令的主要信息，包括内存等。<br>clear 删除存储器中的变量。<br>长任务可以通过使用省略号(…)扩展到另一行。<br><strong>格式命令</strong><br>默认情况下，MATLAB显示的是短格式即是保存四位小数。但是，如果要更精确，则需要使用format命令。<br>format long命令显示十进制后的16位数字。<br>format bank命令将数字舍入到小数点后两位。<br>format short e命令以指数形式显示四位小数加上指数。<br>format long e命令允许以指数形式显示十六位小数加上指数。<br>format rat命令给出计算结果最接近的合理表达式。<br><strong>创建向量</strong><br><strong>行向量</strong>使用的是方括号元素集合的形式创建，用空格或者逗号分隔元素。<br><strong>列向量</strong>使用的是方括号元素集合的形式创建，用分号分隔元素。<br><strong>创建矩阵</strong><br>矩阵中每一行元素用逗号分隔，列与列之间用分号分隔元素。例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">m = [1 2 3;4 5 6;7 8 9];</span><br></pre></td></tr></table></figure></p>
-<p><strong>matlab命令</strong></p>
-<ul>
-<li>数组及向量的命令</li>
-</ul>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>描述说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cat</td>
-<td>用于连接数组</td>
-</tr>
-<tr>
-<td>find</td>
-<td>查找非零元素的索引</td>
-</tr>
-<tr>
-<td>size</td>
-<td>计算数组的大小</td>
-</tr>
-<tr>
-<td>sort</td>
-<td>对数组进行排序</td>
-</tr>
-<tr>
-<td>dot</td>
-<td>计算矩阵点积</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>创建文件与运行</strong><br>matlab中创建文件有两种形式，一种是通过ide创建，另一种是通过命令提示符。在命令提示符中输入edit加上文件名称即可(.m的后缀名称)<br>运行则在命令提示符后面输入文件名称(不包括后缀名称.m即可)。<br><strong>数据结构</strong><br>matlab的数据类型有：</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>数据类型</th>
-<th>描述说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>int</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>最后是<a href="https://www.yiibai.com/matlab" title="教程" target="_blank" rel="noopener">matlab教程来源</a></p>
-
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/05/matlab基本操作知识/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1111,43 +975,15 @@ lb < x < ub
 </blockquote>
 </blockquote>
 </blockquote>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>姓名</th>
-<th style="text-align:center">技能</th>
-<th style="text-align:right">排行</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>刘备</td>
-<td style="text-align:center">哭</td>
-<td style="text-align:right">大哥</td>
-</tr>
-<tr>
-<td>关羽</td>
-<td style="text-align:center">打</td>
-<td style="text-align:right">二哥</td>
-</tr>
-<tr>
-<td>张飞</td>
-<td style="text-align:center">骂</td>
-<td style="text-align:right">三哥</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h1 id="九、代码"><a href="#九、代码" class="headerlink" title="九、代码"></a>九、代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function fun()&#123;</span><br><span class="line">     echo &quot;这是一句非常牛逼的代码&quot;;</span><br><span class="line">&#125;</span><br><span class="line">fun();</span><br></pre></td></tr></table></figure>
-<h1 id="十、数学公式"><a href="#十、数学公式" class="headerlink" title="十、数学公式"></a>十、数学公式</h1><p>借助MathJax引擎,在markdown写作页面的首页插入以下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<p>但是这种方式仍然存在有BUG，具体的解决方法<a href="https://www.jianshu.com/p/7ab21c7f0674" title="兼容问题" target="_blank" rel="noopener">点击这里</a><br>还有一种方法是借助在线的公式编辑器，把编辑器里选好的代码粘帖到文章中就可以了。<br><a href="https://www.codecogs.com/latex/eqneditor.php" title="公式编辑器" target="_blank" rel="noopener">在线公式编辑器</a></p>
-<h1 id="十一、杂七杂八"><a href="#十一、杂七杂八" class="headerlink" title="十一、杂七杂八"></a>十一、杂七杂八</h1><ol>
-<li><strong>换行</strong><br>就是在要换行的末尾加上空格</li>
-<li><strong>首行缩进</strong><br>插入半方大空白 &ensp;<br>插入全方大空白 &emsp;</li>
-<li><strong>在公式组后面插入编号</strong><br>在公式的末尾插入\tag{…}</li>
-</ol>
-
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/04/markdown基本知识/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1216,15 +1052,15 @@ lb < x < ub
 
       
           <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/21/hello-world/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1293,7 +1129,7 @@ lb < x < ub
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1347,7 +1183,7 @@ lb < x < ub
 
     
   
-  <script color="0,0,0" opacity="0.5" zindex="-1" count="150" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script color="0,0,12" opacity="0.5" zindex="-1" count="150" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   <script src="/lib/anime.min.js?v=3.1.0"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
@@ -1367,6 +1203,8 @@ lb < x < ub
 
 
 
+  <script src="/js/local-search.js?v=7.3.0"></script>
+
 
 
 
@@ -1383,11 +1221,13 @@ lb < x < ub
   
 
   
-    
-      
     
       
         
+      
+    
+      
+    
       
     
       
